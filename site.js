@@ -121,12 +121,14 @@
         e.preventDefault();
 
         var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyE7kPHDTgvXQLxcPKYp5fFzES9j8ku0T9lWd53Gf-ihYz2G4GBrWdcG5xPwaTsMSsppw/exec';
+        var SECRET    = 'tal-2026-krsna110';
 
         var btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Sending…';
         btn.disabled = true;
 
         var payload = {
+          secret:   SECRET,
           name:     form.elements['name'].value,
           email:    form.elements['email'].value,
           business: form.elements['business'].value,
