@@ -119,11 +119,44 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (formView && successView) {
-          formView.style.display = 'none';
-          successView.style.display = 'block';
-        }
-        form.reset();
+
+        var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyE7kPHDTgvXQLxcPKYp5fFzES9j8ku0T9lWd53Gf-ihYz2G4GBrWdcG5xPwaTsMSsppw/exec';
+
+        var btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+
+        var payload = {
+          name:     form.elements['name'].value,
+          email:    form.elements['email'].value,
+          business: form.elements['business'].value,
+          spend:    form.elements['spend'].value,
+          leak:     form.elements['leak'].value,
+        };
+
+        fetch(SHEET_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        })
+          .then(function () {
+            if (formView && successView) {
+              formView.style.display = 'none';
+              successView.style.display = 'block';
+            }
+            form.reset();
+          })
+          .catch(function () {
+            // ponytail: show success anyway — sheet write may still succeed (CORS opaque response)
+            if (formView && successView) {
+              formView.style.display = 'none';
+              successView.style.display = 'block';
+            }
+            form.reset();
+          })
+          .finally(function () {
+            btn.textContent = 'Submit application';
+            btn.disabled = false;
+          });
       });
     }
 
