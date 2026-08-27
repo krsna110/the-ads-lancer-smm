@@ -128,12 +128,43 @@
         btn.disabled = true;
 
         var payload = {
-          secret:   SECRET,
-          name:     form.elements['name'].value,
-          email:    form.elements['email'].value,
-          business: form.elements['business'].value,
-          spend:    form.elements['spend'].value,
-          leak:     form.elements['leak'].value,
+          secret:         SECRET,
+          name:           form.elements['name'].value,
+          whatsapp:       form.elements['whatsapp'].value,
+          email:          form.elements['email'].value,
+          sell:           form.elements['sell'].value,
+          niche:          form.elements['niche'].value,
+          price:          form.elements['price'].value,
+          spend:          form.elements['spend'].value,
+          registrations:  form.elements['registrations'].value,
+          attendance:     form.elements['attendance'].value,
+          sales:          form.elements['sales'].value,
+          bottleneck:     form.elements['bottleneck'].value,
+          scale_timeline: form.elements['scale_timeline'].value,
+          url:            form.elements['url'].value,
+        };
+
+        var handleSuccess = function () {
+          form.reset();
+          if (modal) modal.close();
+
+          // Qualification Configuration Hook:
+          // Defaulting all submissions to calendar.html as requested.
+          // To implement qualification checks, uncomment and configure below:
+          /*
+          var spend = payload.spend;
+          var price = parseFloat(payload.price.replace(/[^0-9.]/g, '')) || 0;
+          
+          // E.g., qualify if ad spend is not low and offer price is above threshold:
+          var isQualified = (spend !== 'Under ₹1L' && price >= 10000);
+          if (isQualified) {
+            window.location.href = 'calendar.html';
+          } else {
+            window.location.href = 'thank-you.html?qualified=false';
+          }
+          */
+          
+          window.location.href = 'calendar.html';
         };
 
         fetch(SHEET_URL, {
@@ -142,19 +173,11 @@
           body: JSON.stringify(payload),
         })
           .then(function () {
-            if (formView && successView) {
-              formView.style.display = 'none';
-              successView.style.display = 'block';
-            }
-            form.reset();
+            handleSuccess();
           })
           .catch(function () {
-            // ponytail: show success anyway — sheet write may still succeed (CORS opaque response)
-            if (formView && successView) {
-              formView.style.display = 'none';
-              successView.style.display = 'block';
-            }
-            form.reset();
+            // ponytail: redirect anyway — sheet write may still succeed (CORS opaque response)
+            handleSuccess();
           })
           .finally(function () {
             btn.textContent = 'Submit application';

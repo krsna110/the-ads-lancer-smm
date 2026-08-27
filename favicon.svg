@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Rounded background container for readability on any tab theme -->
+  <rect width="512" height="512" rx="112" fill="#f8fafc" />
+  <rect x="8" y="8" width="496" height="496" rx="104" stroke="#e2e8f0" stroke-width="12" />
+
+  <!-- Monogram AL using the exact geometric styles from the logo -->
+  <!-- Stylized A (chevron with dot) -->
+  <path d="M 156 220 L 256 60 L 356 220" stroke="#0f172a" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="256" cy="180" r="24" fill="#0f172a" />
+
+  <!-- Stylized L (rounded corner) -->
+  <path d="M 176 270 V 390 A 30 30 0 0 0 206 420 H 336" stroke="#0f172a" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

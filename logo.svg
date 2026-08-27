@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180" fill="none">
+  <!-- "The" - Serif font matching the logo -->
+  <text x="24" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="#0f172a" font-style="italic">The</text>
+
+  <!-- "ADS" - Main geometric text -->
+  <g stroke="#0f172a" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A (Chevron) -->
+    <path d="M 25 84 L 45 44 L 65 84" />
+    <!-- D -->
+    <path d="M 82 44 V 84 H 94 C 106 84 114 76 114 64 C 114 52 106 44 94 44 Z" />
+    <!-- S -->
+    <path d="M 148 50 C 146 44 138 44 134 44 C 128 44 128 50 130 54 C 134 60 148 60 148 72 C 148 80 140 84 132 84 C 126 84 124 80 124 76" />
+  </g>
+  <!-- Dot inside A of ADS -->
+  <circle cx="45" cy="72" r="5" fill="#0f172a" />
+
+  <!-- "LANCER" - Secondary geometric text -->
+  <g stroke="#0f172a" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- L (rounded corner) -->
+    <path d="M 24 96 V 122 A 6 6 0 0 0 30 128 H 50" />
+    <!-- A (Chevron) -->
+    <path d="M 62 128 L 77 94 L 92 128" />
+    <!-- N -->
+    <path d="M 104 128 V 96 L 122 128 V 96" />
+    <!-- C -->
+    <path d="M 152 104 C 150 98 144 96 138 96 C 130 96 130 112 130 112 C 130 112 130 128 138 128 C 144 128 150 126 152 120" />
+    <!-- E -->
+    <path d="M 176 96 H 160 V 128 H 176 M 160 112 H 172" />
+    <!-- R -->
+    <path d="M 186 128 V 96 H 198 C 204 96 208 100 208 106 C 208 112 204 116 198 116 H 186 M 196 116 L 208 128" />
+  </g>
+  <!-- Dot inside A of LANCER -->
+  <circle cx="77" cy="118" r="4" fill="#0f172a" />
+
+  <!-- Subtitle: "NOT JUST TRAFFIC, REAL CONVERSIONS." -->
+  <text x="24" y="152" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="8.8" font-weight="800" fill="#0f172a" letter-spacing="0.08em">NOT JUST TRAFFIC, REAL CONVERSIONS.</text>
+</svg>
