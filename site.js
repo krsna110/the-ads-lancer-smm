@@ -5,11 +5,13 @@
  */
 (function () {
   function init() {
-    /* 1. Header scroll state */
+    /* 1. Header and Sticky Bottom CTA scroll state */
     var header = document.querySelector('.site-header');
-    if (header) {
+    var stickyCta = document.getElementById('sticky-cta-bar');
+    if (header || stickyCta) {
       var onScroll = function () {
-        header.classList.toggle('scrolled', window.scrollY > 24);
+        if (header) header.classList.toggle('scrolled', window.scrollY > 24);
+        if (stickyCta) stickyCta.classList.toggle('show', window.scrollY > 500);
       };
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });

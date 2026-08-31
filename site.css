@@ -648,3 +648,50 @@ dialog#apply-modal {
   text-transform: uppercase;
 }
 
+/* ── Sticky Bottom CTA Bar ── */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  padding: 0.75rem 0;
+  box-shadow: 0 -8px 30px rgba(15, 23, 42, 0.06);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sticky-cta.show {
+  transform: translateY(0);
+}
+.sticky-cta-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.sticky-cta-text {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 768px) {
+  .sticky-cta-text {
+    display: none;
+  }
+  .sticky-cta-flex {
+    justify-content: center;
+  }
+  .sticky-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
