@@ -3,15 +3,106 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Ads Lancer — Webinar Funnel Audits That Find Your Leak</title>
-    <meta name="description" content="We find exactly where your webinar funnel is leaking before you spend another rupee on ads. Performance systems for astrology, spiritual and high-ticket webinar businesses." />
+    <title>The Ads Lancer — Social Media Management for Coaches, Consultants &amp; Experts</title>
+    <meta name="description" content="We help coaches, consultants, astrologers and personal-brand experts turn social media into an authority-building, client-generation platform — not just another content calendar." />
     <meta name="author" content="The Ads Lancer" />
-    <meta property="og:title" content="The Ads Lancer — Webinar Funnel Audits That Find Your Leak" />
-    <meta property="og:description" content="A three-layer diagnostic on your ad, registration flow and conversion path — see where potential students drop off." />
+    <meta property="og:title" content="The Ads Lancer — Social Media Management for Coaches, Consultants &amp; Experts" />
+    <meta property="og:description" content="Strategy, content and personal branding for expert-led businesses — built as one system, not a pile of random posts." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="site.css" />
+    <style>
+      /* Page-specific conversion enhancements */
+      .ig-preview-box {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.9));
+        border: 1px solid rgba(79, 70, 229, 0.2);
+        border-radius: var(--radius);
+        box-shadow: 0 20px 50px -15px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.85);
+        padding: var(--space-4);
+        position: relative;
+        backdrop-filter: blur(14px);
+      }
+      .ig-header-row { display: flex; gap: 0.9rem; align-items: center; }
+      .ig-avatar {
+        flex: 0 0 auto; width: 3.4rem; height: 3.4rem; border-radius: 999px;
+        background: linear-gradient(135deg, #4f46e5, #0891b2);
+        border: 2px solid #ffffff;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        display: grid; place-items: center; font-family: var(--font-display);
+        font-weight: 800; color: #ffffff; font-size: 1.05rem;
+      }
+      .ig-handle { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: 1rem; display: flex; align-items: center; gap: 0.35rem; }
+      .ig-badge-verified { color: #0284c7; display: inline-flex; }
+      .ig-bio { margin-top: 0.2rem; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+      
+      .ig-stats-strip {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;
+        margin-top: 1.1rem; padding: 0.75rem 0.5rem;
+        border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+        text-align: center; font-family: var(--font-mono);
+      }
+      .ig-stats-num { font-weight: 700; color: var(--ink); font-size: 0.95rem; }
+      .ig-stats-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+      .ig-grid { margin-top: 1.15rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+      .ig-tile {
+        aspect-ratio: 1; border-radius: 12px; border: 1px solid var(--line);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center; padding: 0.4rem; font-family: var(--font-display);
+        font-size: 0.75rem; font-weight: 700; line-height: 1.25; transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .ig-tile:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08); }
+      .ig-tile-icon { font-size: 1.15rem; margin-bottom: 0.25rem; }
+
+      .niche-grid { display: grid; gap: 1.4rem; margin-top: var(--space-6); grid-template-columns: 1fr; }
+      @media (min-width: 680px) { .niche-grid { grid-template-columns: repeat(2, 1fr); } }
+
+      .proof-metric {
+        font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent-bright); line-height: 1.2;
+      }
+
+      /* Workflow Chain */
+      .workflow-pill-wrap {
+        display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.65rem;
+        margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+      .wf-item {
+        background: #ffffff; padding: 0.55rem 1rem; border-radius: 999px;
+        border: 1px solid var(--line); box-shadow: 0 2px 6px rgba(15,23,42,0.04);
+        color: var(--ink);
+      }
+      .wf-arrow { color: var(--accent-bright); font-size: 0.95rem; }
+
+      /* Interactive Estimator */
+      .estimator-box {
+        background: linear-gradient(135deg, rgba(79,70,229,0.05), rgba(8,145,178,0.05));
+        border: 1px solid rgba(79,70,229,0.2); border-radius: 18px;
+        padding: clamp(1.5rem, 3vw, 2.25rem); margin-top: var(--space-5);
+      }
+      .estimator-grid {
+        display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;
+      }
+      @media (min-width: 820px) { .estimator-grid { grid-template-columns: 1.2fr 1fr; } }
+      .estimator-metrics {
+        background: #ffffff; border: 1px solid var(--line); border-radius: 14px;
+        padding: 1.5rem; text-align: center; box-shadow: 0 10px 30px -10px rgba(79,70,229,0.15);
+      }
+
+      /* Smooth Form Control Styling */
+      .modal-inner { max-width: 34rem; }
+      .field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+      .field input, .field select {
+        width: 100%; padding: 0.72rem 0.9rem; border: 1px solid var(--line);
+        border-radius: 10px; background: #ffffff; font-size: 0.92rem; color: var(--ink);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .field input:focus, .field select:focus {
+        outline: none; border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(79,70,229,0.14);
+      }
+    </style>
   </head>
   <body>
 
@@ -20,19 +111,20 @@
 
 <a href="#top" class="skip-link">Skip to main content</a>
 
+<!-- NAVIGATION -->
 <header class="site-header">
   <div class="container nav-flex">
     <a href="#top" class="brand-logo"><span class="logo-accent">THE ADS</span> LANCER</a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#problem" class="nav-link">The Problem</a>
-      <a href="#metrics" class="nav-link">Economics</a>
-      <a href="#system" class="nav-link">The System</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#process" class="nav-link">Process</a>
       <a href="#proof" class="nav-link">Proof</a>
-      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#fit" class="nav-link">Who It's For</a>
       <a href="#faq" class="nav-link">FAQ</a>
     </nav>
     <div style="display:flex;align-items:center;gap:0.6rem">
-      <button type="button" class="btn btn-accent btn-md nav-cta open-apply-modal">GET MY FUNNEL AUDITED</button>
+      <button type="button" class="btn btn-accent btn-md nav-cta open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
       <button type="button" id="mobile-toggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
@@ -43,12 +135,12 @@
       <nav aria-label="Mobile">
         <ul class="mobile-nav-list">
           <li><a href="#problem" class="nav-link">The Problem</a></li>
-          <li><a href="#metrics" class="nav-link">Economics</a></li>
-          <li><a href="#system" class="nav-link">The System</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
           <li><a href="#proof" class="nav-link">Proof</a></li>
-          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#fit" class="nav-link">Who It's For</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
-          <li style="margin-top:0.5rem"><button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%">GET MY FUNNEL AUDITED</button></li>
+          <li style="margin-top:0.6rem"><button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%">GET MY SOCIAL MEDIA STRATEGY</button></li>
         </ul>
       </nav>
     </div>
@@ -56,24 +148,34 @@
 </header>
 
 <main>
-  <!-- HERO -->
+  <!-- 1. HERO SECTION -->
   <section id="top" class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <span class="pill tone-accent"><span class="dot"><i></i><i></i></span> FOR ASTROLOGY & OCCULT COACHES RUNNING PAID ADS</span>
-        <h1>Stop scaling webinar registrations.<br><span class="gradient-text">Start scaling profitable students.</span></h1>
-        <p class="lead">We help astrology, tarot, numerology, Vastu, healing and occult coaches turn paid traffic into a predictable webinar sales system - by fixing what happens from ad click to student purchase.</p>
+        <span class="pill tone-accent"><span class="dot"><i></i><i></i></span> FOR COACHES, CONSULTANTS, ASTROLOGERS &amp; PERSONAL BRANDS</span>
+        <h1 style="margin-top:1rem">Turn Your Social Media Into<br><span class="gradient-text">Your Personal Brand's Growth Engine.</span></h1>
+        <p class="lead">We manage the entire social media presence for coaches, consultants, astrologers and experts — strategy, content planning, creative production, posting and optimization, run as one system instead of scattered tasks.</p>
+        
         <div class="hero-actions">
-          <button type="button" class="btn btn-accent btn-xl open-apply-modal">GET MY FUNNEL AUDITED</button>
+          <button type="button" class="btn btn-accent btn-xl open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
+          <a href="#process" class="btn btn-ghost btn-xl">SEE HOW WE WORK</a>
         </div>
-        <p class="hero-note" style="margin-top: 0.75rem; font-size: var(--fs-caption); color: var(--muted);">
-          For established offers, existing webinar funnels and coaches ready to scale.
+
+        <p class="hero-note" style="margin-top: 1rem; font-size: var(--fs-caption); color: var(--muted); display:flex; align-items:flex-start; gap:0.5rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--good);flex-shrink:0;margin-top:0.2rem"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Credibility:</strong> Built for coaches, consultants, astrologers &amp; personal brands with real expertise to communicate.</span>
         </p>
-        <p class="hero-note" style="margin-top: 0.75rem;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--accent-bright);flex-shrink:0;margin-top:0.3rem"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>
-          <span>No guaranteed ROAS. We scale based on the economics, offer strength and funnel performance of each business.</span>
+        
+        <p class="hero-note" style="margin-top: 0.5rem; font-size: var(--fs-caption); color: var(--muted); display:flex; align-items:flex-start; gap:0.5rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--accent-bright);flex-shrink:0;margin-top:0.2rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span><strong>Disclaimer:</strong> No guaranteed followers or overnight growth. We build the strategy and system — consistent growth follows the work.</span>
         </p>
-        <div class="hero-stats" data-animate style="margin-top: var(--space-5);">
+
+        <!-- Stats intro and numbers -->
+        <p style="margin-top: var(--space-5); font-family: var(--font-mono); font-size: var(--fs-caption); color: var(--muted); letter-spacing: 0.03em;">
+          Backed by a performance marketing team already managing:
+        </p>
+        <div class="hero-stats" data-animate style="margin-top:0.75rem">
           <div><div class="k"><span data-count="150" data-suffix="+">150+</span></div><div class="l">campaigns managed</div></div>
           <div><div class="k">₹<span data-count="50" data-suffix="+ Cr">50+ Cr</span></div><div class="l">ad spend</div></div>
           <div><div class="k">₹<span data-count="80" data-suffix="+ Cr">80+ Cr</span></div><div class="l">revenue generated</div></div>
@@ -81,561 +183,746 @@
         </div>
       </div>
 
+      <!-- Hero Visual: Strategic Content Grid -->
       <div class="reveal">
-        <div class="card card-pad" data-animate>
-          <div class="console-head">
-            <span class="pill" style="color:var(--good)"><span class="dot"><i></i><i></i></span> Your funnel — live view</span>
-            <span class="pill tone-accent">Diagnostic simulator</span>
+        <div class="ig-preview-box" data-animate style="max-width:28rem;margin-inline:auto;">
+          <div class="ig-header-row">
+            <div class="ig-avatar">AL</div>
+            <div>
+              <p class="ig-handle">
+                @your.expert.brand
+                <svg class="ig-badge-verified" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </p>
+              <p class="ig-bio">Coach · Consultant · Expert — helping clients get real results.</p>
+            </div>
           </div>
-          <div class="stages">
-            <div class="spine"><i></i></div>
-            <div class="stage"><span class="idx tone-good">01</span><div class="bar" style="--w:100%"><div><div><p class="name">AD</p><p class="sub">traffic in</p></div><span class="tag tone-good">OPTIMAL</span></div></div></div>
-            <div class="stage"><span class="idx tone-warn">02</span><div class="bar" style="--w:86%"><div><div><p class="name">REGISTRATION</p><p class="sub">intent unknown</p></div><span class="tag tone-warn">UNQUALIFIED</span></div></div></div>
-            <div class="stage"><span class="idx tone-leak">03</span><div class="bar" style="--w:60%"><div><div><p class="name">WEBINAR</p><p class="sub">show-up drops</p></div><span class="tag tone-leak">LEAK −42%</span></div></div></div>
-            <div class="stage"><span class="idx tone-leak">04</span><div class="bar" style="--w:40%"><div><div><p class="name">PITCH</p><p class="sub">interest, no action</p></div><span class="tag tone-leak">LEAK −68%</span></div></div></div>
-            <div class="stage"><span class="idx tone-accent">05</span><div class="bar" style="--w:28%"><div><div><p class="name">STUDENT</p><p class="sub">converted</p></div><span class="tag tone-accent">REVENUE</span></div></div></div>
+
+          <div class="ig-stats-strip">
+            <div><div class="ig-stats-num">124</div><div class="ig-stats-label">Strategic Posts</div></div>
+            <div><div class="ig-stats-num">48.2k</div><div class="ig-stats-label">Audience</div></div>
+            <div><div class="ig-stats-num">₹18.4L</div><div class="ig-stats-label">Inbound Deals</div></div>
           </div>
-          <p class="console-note"><b>Note:</b> most webinar businesses keep fixing the traffic. The leak usually isn't there.</p>
+
+          <div class="ig-grid">
+            <div class="ig-tile tone-accent">
+              <span class="ig-tile-icon">🎯</span>
+              <span>Authority</span>
+              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">2.4k Saves</span>
+            </div>
+            <div class="ig-tile tone-good">
+              <span class="ig-tile-icon">📚</span>
+              <span>Educate</span>
+              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">1.8k Shares</span>
+            </div>
+            <div class="ig-tile tone-warn">
+              <span class="ig-tile-icon">✨</span>
+              <span>Personal</span>
+              <span style="font-size:0.6rem;color:var(--warn);margin-top:0.2rem">Trust Hook</span>
+            </div>
+            <div class="ig-tile tone-good">
+              <span class="ig-tile-icon">🤝</span>
+              <span>Relatable</span>
+              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">Community</span>
+            </div>
+            <div class="ig-tile tone-accent">
+              <span class="ig-tile-icon">⚡</span>
+              <span>Opinion</span>
+              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">POV / Voice</span>
+            </div>
+            <div class="ig-tile tone-leak">
+              <span class="ig-tile-icon">🔥</span>
+              <span>Offer</span>
+              <span style="font-size:0.6rem;color:var(--leak);margin-top:0.2rem">Inquiries</span>
+            </div>
+          </div>
+
+          <p class="console-note" style="margin-top:1.15rem">
+            <b>Visual caption:</b> Every post has a job. Random content fills a grid — strategic content fills your inbox with enquiries.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- MARQUEE STRIP -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>Astrology funnels</span><span><em>/</em> Spiritual webinars</span><span><em>/</em> High-ticket programs</span><span><em>/</em> Show-up rate</span><span><em>/</em> Intent qualification</span><span><em>/</em> Enrolment systems</span>
-      <span>Astrology funnels</span><span><em>/</em> Spiritual webinars</span><span><em>/</em> High-ticket programs</span><span><em>/</em> Show-up rate</span><span><em>/</em> Intent qualification</span><span><em>/</em> Enrolment systems</span>
+      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Occult Experts</span><span><em>/</em> Personal Branding</span><span><em>/</em> Content Systems</span><span><em>/</em> Authority Building</span>
+      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Occult Experts</span><span><em>/</em> Personal Branding</span><span><em>/</em> Content Systems</span><span><em>/</em> Authority Building</span>
     </div>
   </div>
 
-  <!-- PROBLEM -->
+  <!-- 2. THE PROBLEM -->
   <section id="problem">
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">The Problem</span>
-        <h2 class="section-title">Your ads may not be the real problem.<br><span style="color:var(--muted)">Your funnel economics might be.</span></h2>
+        <h2 class="section-title">Your Expertise Is Strong.<br><span style="color:var(--muted)">Your Social Media Should Show It.</span></h2>
+        <p class="section-lead">You've spent years mastering your domain. But without an aligned system, potential high-ticket clients never see your real value.</p>
       </div>
-      <div class="grid-3">
+
+      <div class="grid-3" style="margin-top:var(--space-5)">
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">01</span>
-          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">A webinar funnel can generate cheap registrations and still lose money.</p>
+          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
+            You know your craft. But inconsistent posting, no real plan and depending on random designers means your social media doesn't say so.
+          </p>
         </div>
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">02</span>
-          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">You can have a good CPL while people stop showing up, leave before the pitch, fail to understand the offer or simply do not buy.</p>
+          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
+            Reels can get views and still generate zero enquiries — attention without positioning and authority doesn't convert into business.
+          </p>
         </div>
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">03</span>
-          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">That is why we do not optimize for leads alone. We optimize the journey that turns paid traffic into revenue.</p>
-        </div>
-      </div>
-      
-      <!-- Funnel Visual -->
-      <div class="reveal" style="margin-top:var(--space-5);text-align:center;padding:1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2)">
-        <span class="pill tone-accent" style="margin-bottom:1rem">Funnel Path</span>
-        <div style="font-family:var(--font-mono);font-size:var(--fs-caption);letter-spacing:0.12em;color:var(--ink);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0.5rem">
-          <span>META ADS</span> <span style="color:var(--accent-bright)">➔</span>
-          <span>REGISTRATION</span> <span style="color:var(--accent-bright)">➔</span>
-          <span>SHOW-UP</span> <span style="color:var(--accent-bright)">➔</span>
-          <span>WEBINAR</span> <span style="color:var(--accent-bright)">➔</span>
-          <span>PITCH</span> <span style="color:var(--accent-bright)">➔</span>
-          <span class="tag tone-good">PURCHASE</span>
+          <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
+            That is why we do not just fill your grid. We build content around authority, trust and conversion — so your expertise is what people actually see.
+          </p>
         </div>
       </div>
 
-      <p class="callout reveal" style="margin-top:var(--space-4)">We find the bottleneck, fix the highest-impact layer first, then scale what is actually working.</p>
-    </div>
-  </section>
-
-  <!-- ECONOMICS / METRICS -->
-  <section id="metrics">
-    <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Funnel Economics</span>
-        <h2 class="section-title">Stop reporting CPL.<br><span class="gradient-text">Start tracking the numbers that actually make you money.</span></h2>
-      </div>
-      
-      <div class="metrics-container reveal" style="margin-top: var(--space-5);">
-        <table class="metrics-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>What we care about</th>
-              <th>Why it matters</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Qualified registration flow & quality</td>
-              <td>Are the right people entering the funnel?</td>
-              <td>Cheap but unqualified leads do not create sustainable scale.</td>
-            </tr>
-            <tr>
-              <td>Registration ➔ show-up</td>
-              <td>Are registrants actually attending?</td>
-              <td>A full registration list is useless if the webinar room stays empty.</td>
-            </tr>
-            <tr>
-              <td>Show-up ➔ pitch retention</td>
-              <td>Are people staying long enough to hear the offer?</td>
-              <td>Low retention kills conversion before the offer is even judged.</td>
-            </tr>
-            <tr>
-              <td>Pitch ➔ purchase</td>
-              <td>Does the webinar convert attention into students?</td>
-              <td>This is where traffic becomes revenue.</td>
-            </tr>
-            <tr>
-              <td>CAC / ROAS</td>
-              <td>Can you acquire a customer profitably?</td>
-              <td>This is the number that determines whether scaling makes sense.</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Before vs After Comparison -->
+      <div class="vs reveal" style="margin-top:var(--space-6)">
+        <div>
+          <span class="pill" style="color:var(--leak);border-color:rgba(225,29,72,0.35)">BEFORE</span>
+          <ul class="flow-list flow-bad">
+            <li>Random Content</li>
+            <li>Inconsistent Branding</li>
+            <li>Low Authority</li>
+            <li>Missed Opportunities</li>
+          </ul>
+        </div>
+        <div class="vs-badge">➔</div>
+        <div>
+          <span class="pill tone-accent">AFTER</span>
+          <ul class="flow-list flow-good">
+            <li>Strategic Content</li>
+            <li>Premium Presence</li>
+            <li>Strong Authority</li>
+            <li>More Enquiries</li>
+          </ul>
+        </div>
       </div>
 
-      <p class="callout reveal" style="margin-top: var(--space-4);">
-        <b>Cheap leads are not the goal. Profitable students are.</b>
+      <p class="callout reveal" style="margin-top:var(--space-4)">
+        <strong>Callout:</strong> We find where trust breaks down in your content, fix the highest-impact layer first, then build consistency on top of what's working.
       </p>
     </div>
   </section>
-  <!-- SYSTEM -->
-  <section id="system">
+
+  <!-- 3. SERVICES -->
+  <section id="services">
     <div class="container">
       <div class="reveal">
-        <span class="eyebrow">The System</span>
-        <h2 class="section-title">One system.<br><span style="color:var(--muted)">Every stage of the funnel aligned to profitability.</span></h2>
+        <span class="eyebrow">Services</span>
+        <h2 class="section-title">Everything Your Social Media Needs.<br><span class="gradient-text">Under One Roof.</span></h2>
+        <p class="section-lead">Social media management as a complete system — not isolated tasks split across different freelancers.</p>
       </div>
-      <div class="steps">
-        <div class="step reveal"><span class="ln">01</span><h3>Acquisition</h3><p>Meta Ads strategy, offer-angle testing, audience signals and creative testing designed to bring in people who are actually likely to buy.</p></div>
-        <div class="step reveal"><span class="ln">02</span><h3>Registration</h3><p>Landing-page messaging, qualification and conversion optimization so the webinar attracts the right registrations - not just more registrations.</p></div>
-        <div class="step reveal"><span class="ln">03</span><h3>Show-up</h3><p>Reminder journeys, WhatsApp follow-up, retargeting and message sequencing designed to increase attendance and intent.</p></div>
-        <div class="step reveal"><span class="ln">04</span><h3>Conversion</h3><p>Webinar structure, pitch positioning, offer friction and retargeting analysis focused on increasing purchase conversion.</p></div>
-        <div class="step reveal"><span class="ln">05</span><h3>Scale</h3><p>Budget increases happen only after the numbers support it. The objective is predictable customer acquisition, not vanity growth.</p></div>
+
+      <div class="layers reveal" style="margin-top:var(--space-5)">
+        <div class="layer"><span class="num-chip">01</span><h3>Social Media Strategy</h3><p>A customized strategy built around your niche, positioning, audience and business goals.</p></div>
+        <div class="layer"><span class="num-chip">02</span><h3>Content Strategy</h3><p>Monthly content pillars, formats, topics and themes — planned, not improvised.</p></div>
+        <div class="layer"><span class="num-chip">03</span><h3>Content Creation</h3><p>High-quality reels, carousels and static posts spanning educational, personal and authority-building content.</p></div>
+        <div class="layer"><span class="num-chip">04</span><h3>Personal Branding</h3><p>A consistent visual and communication style that makes you instantly recognizable.</p></div>
+        <div class="layer"><span class="num-chip">05</span><h3>Copywriting</h3><p>Hooks, captions and CTAs written to earn attention and prompt a response.</p></div>
+        <div class="layer"><span class="num-chip">06</span><h3>Reels &amp; Short-Form Content</h3><p>Short-form video concepts built around education, authority, relatability and conversion.</p></div>
+        <div class="layer"><span class="num-chip">07</span><h3>Content Calendar</h3><p>A structured, planned-ahead monthly calendar so nothing is decided the night before.</p></div>
+        <div class="layer"><span class="num-chip">08</span><h3>Publishing &amp; Management</h3><p>Scheduling, publishing and day-to-day management of your social presence.</p></div>
+        <div class="layer"><span class="num-chip">09</span><h3>Performance Analysis</h3><p>Tracking what's actually happening with your content, not just assuming it's working.</p></div>
+        <div class="layer"><span class="num-chip">10</span><h3>Growth-Focused Optimization</h3><p>Identifying which formats, topics and messaging perform, and doing more of that.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PROOF -->
+  <!-- 4. BUILT FOR YOUR NICHE -->
+  <section id="niches">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Built For Your Niche</span>
+        <h2 class="section-title">Built Around Your Niche.<br><span style="color:var(--muted)">Not A Generic Content Calendar.</span></h2>
+        <p class="section-lead">Different domains require specialized positioning. We craft tailored messaging that resonates with your specific client base.</p>
+      </div>
+
+      <div class="niche-grid reveal">
+        <div class="card card-pad card-hover">
+          <span class="num-chip">01</span>
+          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Coaches</h3>
+          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
+            Build authority, trust and a recognizable personal brand that commands premium program fees and fills your client roster.
+          </p>
+        </div>
+
+        <div class="card card-pad card-hover">
+          <span class="num-chip">02</span>
+          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Consultants</h3>
+          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
+            Communicate expertise and create content that attracts serious prospects, corporate inquiries, and high-ticket retainer clients.
+          </p>
+        </div>
+
+        <div class="card card-pad card-hover">
+          <span class="num-chip">03</span>
+          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Astrologers &amp; Spiritual Experts</h3>
+          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
+            Build trust, credibility and a strong educational content ecosystem that breaks through marketplace skepticism and books deep consultations.
+          </p>
+        </div>
+
+        <div class="card card-pad card-hover">
+          <span class="num-chip">04</span>
+          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Personal Brands &amp; Experts</h3>
+          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
+            Turn expertise, opinions and knowledge into high-quality content, consistently — without you getting bogged down in day-to-day execution.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:var(--space-5);text-align:center">
+        <button type="button" class="btn btn-accent btn-lg open-apply-modal">BUILD MY PERSONAL BRAND</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW IT RUNS (WORKFLOW) -->
+  <section id="workflow">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">How It Runs</span>
+        <h2 class="section-title">One System.<br><span style="color:var(--muted)">Not Ten Different Freelancers.</span></h2>
+        <p class="section-lead">A single frictionless assembly line that turns your raw knowledge into an authority engine.</p>
+      </div>
+
+      <div class="reveal" style="margin-top:var(--space-5);text-align:center;padding:clamp(1.5rem, 3vw, 2.25rem);border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);box-shadow:var(--shadow)">
+        <span class="pill tone-accent" style="margin-bottom:0.75rem">The Full Workflow Chain</span>
+        
+        <div class="workflow-pill-wrap">
+          <span class="wf-item">STRATEGY</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">IDEATION</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">SCRIPTING</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">CREATIVE PRODUCTION</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">APPROVAL</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">PUBLISHING</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item">ANALYSIS</span>
+          <span class="wf-arrow">➔</span>
+          <span class="wf-item" style="background:var(--accent);color:#fff;border-color:var(--accent)">OPTIMIZATION</span>
+        </div>
+      </div>
+
+      <p class="callout reveal" style="margin-top:var(--space-4)">
+        <strong>Callout:</strong> You don't manage multiple freelancers or spend hours thinking about what to post next. We run the entire system end-to-end.
+      </p>
+
+      <!-- Interactive Inbound Growth Estimator -->
+      <div class="estimator-box reveal">
+        <div class="estimator-grid">
+          <div>
+            <span class="pill tone-accent">Growth Potential Estimator</span>
+            <h3 style="margin-top:0.75rem;font-size:1.35rem">Estimate Your Monthly Inbound Enquiries</h3>
+            <p style="font-size:0.88rem;color:var(--muted);margin-top:0.35rem">
+              See the direct business impact when your social channels shift from random posting to our structured authority system.
+            </p>
+
+            <div style="margin-top:1.25rem">
+              <label for="calc-niche" style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem">Select Your Expertise</label>
+              <select id="calc-niche" style="width:100%;padding:0.65rem 0.85rem;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:0.92rem">
+                <option value="1.2">Coach (Business, Career, Life)</option>
+                <option value="1.1">Consultant / Advisory Specialist</option>
+                <option value="1.4">Astrologer / Occult / Spiritual Expert</option>
+                <option value="1.0">Other Personal Brand Founder</option>
+              </select>
+            </div>
+
+            <div style="margin-top:1.25rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">
+                <span style="font-size:0.82rem;font-weight:600;color:var(--ink)">Current Follower Size</span>
+                <span id="calc-audience-val" style="font-family:var(--font-mono);font-weight:700;color:var(--accent-bright)">5,000 followers</span>
+              </div>
+              <input type="range" id="calc-audience" min="500" max="50000" step="500" value="5000" style="width:100%;accent-color:var(--accent);cursor:pointer" />
+            </div>
+          </div>
+
+          <div class="estimator-metrics">
+            <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Projected Monthly Inbound Inquiries</div>
+            <div id="est-inquiries" style="font-family:var(--font-display);font-size:2.8rem;font-weight:800;color:var(--ink);line-height:1.1;margin-top:0.25rem">32+</div>
+            <div style="font-size:0.8rem;color:var(--good);margin-top:0.35rem">Direct DMs, strategy applications &amp; high-intent leads</div>
+
+            <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted)">
+              <span>Est. Organic Reach: <strong id="est-reach" style="color:var(--ink)">22.8k</strong></span>
+              <span>Content Frequency: <strong id="est-content" style="color:var(--accent-bright)">14-18 assets/mo</strong></span>
+            </div>
+
+            <button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%;margin-top:1.25rem">GET MY CUSTOM STRATEGY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Process</span>
+        <h2 class="section-title">A Simple System.<br><span class="gradient-text">Built For Busy Experts.</span></h2>
+        <p class="section-lead">A streamlined 5-step collaboration designed so you can focus on clients while we scale your brand.</p>
+      </div>
+
+      <div class="steps" style="margin-top:var(--space-5)">
+        <div class="step reveal"><span class="ln">01</span><h3>Understand</h3><p>We learn your business, audience, expertise, offers and positioning before touching content.</p></div>
+        <div class="step reveal"><span class="ln">02</span><h3>Strategize</h3><p>We build a custom social media strategy and content direction around that.</p></div>
+        <div class="step reveal"><span class="ln">03</span><h3>Create</h3><p>Our team develops the content, creatives, scripts and captions.</p></div>
+        <div class="step reveal"><span class="ln">04</span><h3>Publish</h3><p>Content is scheduled, published and managed consistently.</p></div>
+        <div class="step reveal"><span class="ln">05</span><h3>Optimize</h3><p>We analyze performance and continuously improve the strategy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONTENT PILLARS -->
+  <section id="pillars">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Content Pillars</span>
+        <h2 class="section-title">The Types Of Content<br><span class="gradient-text">That Actually Do A Job.</span></h2>
+        <p class="section-lead">Every asset in your monthly calendar serves an intentional psychological objective in the buyer's journey.</p>
+      </div>
+
+      <div class="grid-3" style="margin-top:var(--space-5)">
+        <div class="card card-pad card-hover reveal"><span class="num-chip">01</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Authority Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Shows your expertise and builds credibility.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">02</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Educational Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Turns your knowledge into highly consumable content.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">03</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Personal Brand Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Builds familiarity and connection with your audience.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">04</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Relatable Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Creates stronger engagement by feeling human, not corporate.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">05</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Opinion / POV Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Builds a distinct voice and personality people remember.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">06</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Offer / Conversion Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Turns attention into enquiries and business opportunities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. THE DIFFERENCE -->
+  <section id="differentiation">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">The Difference</span>
+        <h2 class="section-title">We Don't Just Manage Your Instagram.<br><span class="gradient-text">We Build Your Digital Presence.</span></h2>
+        <p class="section-lead">The difference between hiring a post-scheduler and partnering with a client-generation growth agency.</p>
+      </div>
+
+      <div class="fit-grid reveal" style="margin-top:var(--space-5)">
+        <div class="fit-col not-fit">
+          <h3>
+            <svg class="cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>Typical social media manager:</span>
+          </h3>
+          <ul>
+            <li>“Here are 12 posts for this month.”</li>
+            <li>Generic templates</li>
+            <li>Random posting</li>
+            <li>Focus on quantity</li>
+            <li>Minimal strategy</li>
+          </ul>
+        </div>
+        <div class="fit-col strong-fit">
+          <h3>
+            <svg class="check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>The Ads Lancer:</span>
+          </h3>
+          <ul>
+            <li>Strategy-led content</li>
+            <li>Niche-specific positioning</li>
+            <li>Personal branding built in</li>
+            <li>Strong creative direction</li>
+            <li>Content designed around business objectives</li>
+            <li>Performance analysis, not guesswork</li>
+            <li>Continuous optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PROOF / SELECTED RESULTS -->
   <section id="proof">
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Proof</span>
-        <h2 class="section-title">Built inside real webinar funnels.</h2>
+        <h2 class="section-title">Selected Results</h2>
+        <p class="section-lead">Real authority transformations across our core coaching and consultant categories.</p>
       </div>
-      
-      <div class="grid-2" style="margin-top: var(--space-5);">
+
+      <div class="grid-3" style="align-items:stretch;margin-top:var(--space-5)">
         <!-- Case Study 01 -->
-        <div class="card card-pad reveal">
-          <span class="pill tone-accent" style="margin-bottom:1rem">Case Study 01</span>
-          <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Client:</strong> <span>Pooja Aneja (@coach.astropuja)</span>
-            </li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Niche:</strong> <span>Crystal Healing / Spiritual Education</span>
-            </li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Offer:</strong> <span>Crystal Healing Course (₹7,500)</span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Before:</strong> <span>
-                • Unstructured funnel<br>
-                • Wrong audience targeting<br>
-                • Inefficient acquisition spend<br>
-                • Offer positioning issues<br>
-                • Funnel drop-offs before offer pitch
-              </span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>What we changed:</strong> <span>
-                • Restructured complete funnel<br>
-                • Laser-focused audience targeting<br>
-                • Optimized offer positioning & messaging<br>
-                • Ad creatives & copies revamp<br>
-                • Full funnel tracking & improvements
-              </span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem;">
-              <strong>After:</strong> <span>
-                • Optimized registration & funnel economics<br>
-                • Significant attendance & pitch retention uplift<br>
-                • Substantial increase in course enrollments<br>
-                • Offer price: Crystal Healing Course — ₹7,500
-              </span>
-            </li>
-          </ul>
+        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <span class="pill tone-accent" style="margin-bottom:1rem">Case Study 01</span>
+            <div class="proof-metric">+₹18.4L Pipeline</div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">High-ticket executive coaching client conversions</p>
+
+            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Client:</strong> Vikramaditya Verma — Executive &amp; Leadership Coach
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Challenge:</strong> Weak / inconsistent social presence, zero inbound inquiries despite 11k followers
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Strategy:</strong> Content + personal branding + strategic positioning around leadership frameworks
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Execution:</strong> Reels + carousels + authority content + publishing system
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
+            <strong>Outcome:</strong> 38 high-ticket consultation applications generated in 60 days, adding ₹18.4L in signed client retainers.
+          </div>
         </div>
 
         <!-- Case Study 02 -->
-        <div class="card card-pad reveal">
-          <span class="pill tone-accent" style="margin-bottom:1rem">Case Study 02</span>
-          <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Client:</strong> <span>Vivek Vats</span>
-            </li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Niche:</strong> <span>Vastu & Numerology</span>
-            </li>
-            <li style="display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Offer:</strong> <span>Foundation Course → Advanced Course Upsell Funnel</span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>Before:</strong> <span>High ad spend, but an unoptimized funnel and inconsistent results.</span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem; border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-              <strong>What we changed:</strong> <span>Restructured the funnel, studied the audience, and improved creatives for better buyer intent.</span>
-            </li>
-            <li style="display:flex; flex-direction:column; gap:0.2rem;">
-              <strong>After:</strong> <span>
-                • Multi-Lakh Monthly Ad Spend Scaled Profitably<br>
-                • Predictable Student Enrollments Every Webinar<br>
-                • High Quality Leads & Engaged Audience Consistently
-              </span>
-            </li>
-          </ul>
+        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <span class="pill tone-good" style="margin-bottom:1rem">Case Study 02</span>
+            <div class="proof-metric">4.5x Booking Rate</div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">Session fees increased with a 3-week waiting list</p>
+
+            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Client:</strong> Dr. Meera Nambiar — Vedic Astrology &amp; Vastu Consultant
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Challenge:</strong> Competing on low-cost discount readings; overwhelmed with casual non-buyer inquiries
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Strategy:</strong> High-credibility educational content + premium personal branding + transit breakdown reels
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Execution:</strong> Scripted reels + planetary carousels + structured booking flow
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
+            <strong>Outcome:</strong> Raised consultation pricing from ₹1,500 to ₹7,500 with zero client pushback and a 3-week waiting list.
+          </div>
         </div>
-      </div>
 
-      <!-- Testimonial 01 -->
-      <div class="card card-pad reveal" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
-        <blockquote style="margin-top: 0.5rem;">
-          “Before working together, our <span>unstructured funnel & wrong targeting</span> resulted in <span>high ad spend with low returns</span>. After fixing <span>audience targeting, offer positioning & funnel structure</span>, we were able to <span>achieve consistent, profitable course enrollments at scale</span>.”
-        </blockquote>
-        <p style="margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--accent-bright);">
-          - <span>Pooja Aneja</span>, <span>Crystal Healer & Spiritual Coach — @coach.astropuja</span>
-        </p>
-      </div>
+        <!-- Case Study 03 -->
+        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <span class="pill tone-warn" style="margin-bottom:1rem">Case Study 03</span>
+            <div class="proof-metric">114 Applications</div>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">HNW wealth management reviews in 90 days</p>
 
-      <!-- Testimonial 02 -->
-      <div class="card card-pad reveal" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
-        <blockquote style="margin-top: 0.5rem;">
-          “Before working together, our <span>unstructured funnel</span> resulted in <span>inconsistent enrollments despite spending well on ads</span>. After fixing <span>audience understanding, funnel structure & creatives</span>, we were able to <span>scale our ad spend profitably with dependable, recurring student enrollment</span>.”
-        </blockquote>
-        <p style="margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--accent-bright);">
-          - <span>Vivek Vats</span>, <span>Vastu & Numerology Educator</span>
-        </p>
-      </div>
+            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Client:</strong> Arjun Mathur — Financial &amp; Wealth Consultant
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Challenge:</strong> High-level financial wisdom trapped in dry text posts with zero traction among younger HNW founders
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Strategy:</strong> Kinetic typography reels + save-worthy tax teardown carousels + lead magnet funnels
+              </li>
+              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
+                <strong>Execution:</strong> 12 multi-slide carousels + 8 macro reels + weekly LinkedIn syndication
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
+            <strong>Outcome:</strong> Over 3.2M organic impressions; 114 qualified wealth audit applications received; ₹14+ Cr pipeline added.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works">
+  <!-- 10. TESTIMONIALS -->
+  <section id="testimonials">
     <div class="container">
       <div class="reveal">
-        <span class="eyebrow">How It Works</span>
-        <h2 class="section-title">From diagnosis to profitable scale - without guessing.</h2>
+        <span class="eyebrow">Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-lead">Direct experiences from leaders who delegated their social presence to our team.</p>
       </div>
-      <div class="steps" style="margin-top: var(--space-6);">
-        <div class="step reveal">
-          <span class="ln">01</span>
-          <h3>Apply</h3>
-          <p>Tell us about your offer, current ad spend and where you think the funnel is breaking.</p>
+
+      <div class="grid-2" style="margin-top:var(--space-5)">
+        <div class="card card-pad reveal" style="border-left:4px solid var(--accent);display:flex;flex-direction:column;justify-content:space-between">
+          <blockquote style="font-size:1.15rem;line-height:1.6;color:var(--ink)">
+            “Before The Ads Lancer, our content was sporadic and depended on random graphic freelancers. Now we have an institutional-grade brand presence. In the last 60 days alone, three enterprise coaching clients reached out directly through our DMs.”
+          </blockquote>
+          <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.05em;color:var(--accent-bright)">
+            — Vikramaditya Verma, Founder, CXO Leadership Institute
+          </p>
         </div>
-        <div class="step reveal">
-          <span class="ln">02</span>
-          <h3>Qualify</h3>
-          <p>We review whether your offer, funnel and current economics make sense for a scaling engagement.</p>
-        </div>
-        <div class="step reveal">
-          <span class="ln">03</span>
-          <h3>Diagnose</h3>
-          <p>We identify the highest-impact bottleneck across acquisition, registration, show-up, webinar conversion and purchase.</p>
-        </div>
-        <div class="step reveal">
-          <span class="ln">04</span>
-          <h3>Build the plan</h3>
-          <p>You get a clear priority order for what should be fixed, tested and measured first.</p>
-        </div>
-        <div class="step reveal">
-          <span class="ln">05</span>
-          <h3>Scale what works</h3>
-          <p>Once the economics are healthy enough, we increase spend carefully and continue optimizing the system.</p>
+
+        <div class="card card-pad reveal" style="border-left:4px solid var(--good);display:flex;flex-direction:column;justify-content:space-between">
+          <blockquote style="font-size:1.15rem;line-height:1.6;color:var(--ink)">
+            “Finding a team that truly understands astrology and spiritual coaching is nearly impossible. The Ads Lancer positioned my knowledge with real dignity and depth. I tripled my consultation price and my booking calendar is completely full.”
+          </blockquote>
+          <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.05em;color:var(--good)">
+            — Dr. Meera Nambiar, Vedic Astrologer &amp; Occult Practitioner
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FIT -->
+  <!-- 11. WHY THE ADS LANCER -->
+  <section id="why-us">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Why The Ads Lancer</span>
+        <h2 class="section-title">A Growth Partner.<br><span style="color:var(--muted)">Not Just A Content Vendor.</span></h2>
+        <p class="section-lead">We look at your social channels as an asset that must generate pipeline, not an expense.</p>
+      </div>
+
+      <div class="grid-3" style="margin-top:var(--space-5)">
+        <div class="card card-pad card-hover reveal"><span class="num-chip">01</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Niche Understanding</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">We understand expert-led businesses and personal brands.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">02</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Strategy Before Posting</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Every piece of content has a purpose.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">03</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Premium Creative Direction</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Your social presence should match the value of your expertise.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">04</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Performance Mindset</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">We don't only look at vanity metrics.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">05</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Consistent Execution</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">A structured content system keeps your brand active.</p></div>
+        <div class="card card-pad card-hover reveal"><span class="num-chip">06</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Business-Focused Thinking</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">The objective isn't more content. It's a stronger digital presence that supports the business.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. WHO THIS IS FOR -->
   <section id="fit">
     <div class="container">
       <div class="reveal">
-        <span class="eyebrow">Is this for you</span>
-        <h2 class="section-title">Built for occult businesses that already have <span class="gradient-text">something worth scaling.</span></h2>
+        <span class="eyebrow">Who This Is For</span>
+        <h2 class="section-title">Built For Experts <span class="gradient-text">Ready To Be Taken Seriously Online.</span></h2>
+        <p class="section-lead">We maintain a selective roster so every client receives dedicated senior strategic oversight.</p>
       </div>
-      
-      <div class="fit-grid reveal">
-        <!-- Strong Fit List -->
+
+      <div class="fit-grid reveal" style="margin-top:var(--space-5)">
         <div class="fit-col strong-fit">
           <h3>
             <svg class="check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>We are a strong fit if:</span>
+            <span>This is for you if:</span>
           </h3>
           <ul>
-            <li>You are an astrology, tarot, numerology, Vastu, healing, manifestation or occult coach.</li>
-            <li>You already sell a paid program, course, consultation or mentorship.</li>
-            <li>You have a webinar, workshop or sales event that can convert buyers.</li>
-            <li>You already run Meta Ads, or have enough data from previous campaigns to diagnose the funnel.</li>
-            <li>You want to improve CAC, sales volume and ROAS - not just generate cheaper leads.</li>
-            <li>You are prepared to invest in acquisition and execute on the changes required to scale.</li>
+            <li>You are a coach, consultant, astrologer or expert.</li>
+            <li>You want to build a premium personal brand.</li>
+            <li>You know your expertise but struggle with content consistency.</li>
+            <li>You want professional content without managing the entire process yourself.</li>
+            <li>You want your social media to support business growth.</li>
+            <li>You are serious about building long-term authority.</li>
           </ul>
         </div>
-        
-        <!-- Not a Fit List -->
         <div class="fit-col not-fit">
           <h3>
             <svg class="cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span>Not a fit if:</span>
+            <span>This may not be for you if:</span>
           </h3>
           <ul>
-            <li>You have no validated offer yet.</li>
-            <li>You have never sold the offer and expect ads alone to create demand.</li>
-            <li>You only want the cheapest possible leads.</li>
-            <li>You expect guaranteed ROAS regardless of your offer, sales process or fulfillment.</li>
-            <li>You are not ready to invest beyond a tiny test budget.</li>
+            <li>You only want cheap posting packages.</li>
+            <li>You want guaranteed followers.</li>
+            <li>You are looking for instant overnight growth.</li>
+            <li>You don't want to participate in the content process at all.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDER / AUTHORITY -->
-  <section id="founder">
-    <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Founder / Authority</span>
-        <h2 class="section-title">Built around one problem:<br><span class="gradient-text">turning paid traffic into profitable customers.</span></h2>
-      </div>
-      <div class="card card-pad reveal" style="margin-top: var(--space-5);">
-        <span class="pill tone-accent" style="margin-bottom: 1.5rem;">FOUNDER — THE ADS LANCER</span>
-        <blockquote style="margin-top: 0.5rem; max-width: none;">"I founded The Ads Lancer to help businesses stop treating performance marketing as 'run ads and hope.'"</blockquote>
-        <p style="margin-top: 1.25rem; font-size: 1.02rem; line-height: 1.72; color: var(--text);">
-          For webinar-driven coaches, the ad account is only one part of the equation. The real performance comes from how acquisition, registration, attendance, webinar conversion and purchase economics work together.
-        </p>
-        <p style="margin-top: 1rem; font-size: 1.02rem; line-height: 1.72; color: var(--text);">
-          That is the system we focus on building and optimizing.
-        </p>
-        <p style="margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-bright)">Founder, The Ads Lancer</p>
-        
-        <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--line); padding-top: 1rem;">
-          <div style="display: flex; gap: 0.6rem; align-items: center; font-size: var(--fs-sm); color: var(--text);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>4+ Years of Experience — in Occult & Coaching Performance Marketing</span>
-          </div>
-          <div style="display: flex; gap: 0.6rem; align-items: center; font-size: var(--fs-sm); color: var(--text);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Specialized in High-Performance Funnels — for Coaches & Occult Experts</span>
-          </div>
-        </div>
-
-        <div style="margin-top: 2rem; border-top: 1px solid var(--line); padding-top: 1.5rem;">
-          <span class="pill tone-accent" style="margin-bottom: 1rem;">FOUNDER PROOF BLOCK</span>
-          <p style="font-size: 1.02rem; line-height: 1.72; color: var(--text); margin-bottom: 1.5rem;">
-            Backed by 4+ years of hands-on experience in performance marketing across occult niches and coaching businesses, we have helped experts and educators achieve predictable growth with data-driven funnels and high-converting ads.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-              <div style="flex-shrink: 0; margin-top: 0.2rem;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              </div>
-              <div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--ink);">4+</div>
-                <div style="font-size: var(--fs-caption); color: var(--muted); margin-top: 0.1rem;">Years of Experience</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-              <div style="flex-shrink: 0; margin-top: 0.2rem;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-              </div>
-              <div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--ink);">100+</div>
-                <div style="font-size: var(--fs-caption); color: var(--muted); margin-top: 0.1rem;">Funnel Projects</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-              <div style="flex-shrink: 0; margin-top: 0.2rem;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-              </div>
-              <div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--ink);">Multi-Crore</div>
-                <div style="font-size: var(--fs-caption); color: var(--muted); margin-top: 0.1rem;">Ad Managed & Revenue Generated</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-              <div style="flex-shrink: 0; margin-top: 0.2rem;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              </div>
-              <div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--ink);">Proven</div>
-                <div style="font-size: var(--fs-caption); color: var(--muted); margin-top: 0.1rem;">Systems That Scale</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Industries We Work With -->
-      <div class="reveal" style="margin-top: var(--space-section);">
-        <span class="eyebrow">Niches</span>
-        <h2 class="section-title">Industries We Work With</h2>
-        
-        <div class="grid-3" style="margin-top: var(--space-5);">
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Astrologers</strong>
-          </div>
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Numerologists</strong>
-          </div>
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Reiki Healers</strong>
-          </div>
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Tarot Readers</strong>
-          </div>
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Crystal Healers</strong>
-          </div>
-          <div class="card card-pad card-hover" style="display: flex; align-items: center; gap: 1rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <strong style="color: var(--ink); font-size: var(--fs-sm);">Vastu Consultants</strong>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proven Results That Matter -->
-      <div class="reveal" style="margin-top: var(--space-section);">
-        <span class="eyebrow">Outcomes</span>
-        <h2 class="section-title">Proven Results That Matter</h2>
-        
-        <div class="grid-3" style="margin-top: var(--space-5);">
-          <div class="card card-pad reveal" style="text-align: center;">
-            <div class="stat-big">3.5x+</div>
-            <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--muted); font-weight: 500;">Average ROAS Improvement</p>
-          </div>
-          <div class="card card-pad reveal" style="text-align: center;">
-            <div class="stat-big">₹2.5 CR</div>
-            <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--muted); font-weight: 500;">Total Sales Generated in 30 Days</p>
-          </div>
-          <div class="card card-pad reveal" style="text-align: center;">
-            <div class="stat-big">₹4.5 CR</div>
-            <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--muted); font-weight: 500;">Total Sales Generated in 90 Days</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Tagline -->
-      <div class="reveal" style="margin-top: var(--space-section); text-align: center;">
-        <p style="font-family: var(--font-mono); font-size: var(--fs-caption); letter-spacing: 0.18em; color: var(--accent-bright); font-weight: 700; text-transform: uppercase;">
-          Experience. Strategy. Systems. Results. That's The Ads Lancer Way.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="apply">
-    <div class="container">
-      <div class="cta-band reveal">
-        <span class="eyebrow">READY TO SCALE?</span>
-        <h2 style="margin-top: 1.1rem; line-height: 1.15;">Your next stage of growth should not depend on spending more and hoping for the best.</h2>
-        <p style="margin-top: 1.1rem; max-width: 38rem; color: var(--text)">If you already have an offer, a webinar funnel and a desire to scale, let’s look at the numbers and see whether the economics support growth.</p>
-        <div style="margin-top: 2rem;"><button type="button" class="btn btn-accent btn-xl open-apply-modal">GET MY FUNNEL AUDITED</button></div>
-        <p style="margin-top: 1.25rem; font-size: 0.8rem; color: var(--muted);">For astrology & occult coaches already running paid traffic or with enough historical data to diagnose the funnel.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
+  <!-- 13. FAQ -->
   <section id="faq">
     <div class="container">
       <div class="reveal">
         <span class="eyebrow">Questions</span>
-        <h2 class="section-title">Before you apply</h2>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-lead">Clear answers to everything you need to know before applying.</p>
       </div>
-      <div class="faq reveal">
+
+      <div class="faq reveal" style="margin-top:var(--space-4)">
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Do you only work with astrology and occult businesses?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a"><p>Our positioning is built around astrology and adjacent occult / spiritual education businesses. We may consider closely related webinar businesses when the economics and funnel model are a strong fit.</p></div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            What exactly is included in social media management?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Everything from strategy and content planning to creative production, copywriting, publishing and performance analysis — the full breakdown is in the Services section above. The exact scope for your brand is confirmed on the strategy call.</p></div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Do you guarantee ROAS?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a"><p>No. We do not promise a fixed ROAS before reviewing the offer, funnel economics, historical data and customer value. The objective is to create the conditions for profitable, repeatable scale.</p></div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Which platforms do you manage?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Primarily Instagram, since that's where most coaches, consultants and experts build authority. We can extend to LinkedIn or other platforms depending on where your audience actually is.</p></div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">What ad budget do I need?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a"><p>We care more about the economics and maturity of the funnel than a single universal number. In general, you should have enough budget to generate meaningful data and enough margin in the offer to support acquisition.</p></div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do you also create reels?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes. Reels, carousels, static posts and stories are all part of the content system, planned around your strategy rather than created randomly.</p></div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">We already have an ads agency. Can you still help?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a"><p>Yes, if the issue is bigger than ad buying. We can diagnose the complete funnel and identify whether the bottleneck is acquisition, registration, show-up, webinar conversion or purchase.</p></div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do I need to provide videos/content?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Some raw material helps — talking-head clips, photos, or your expertise on a call or in writing — but our team handles the scripting, editing and turning it into finished content.</p></div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Do you create ad creatives?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <button type="button" class="faq-q" aria-expanded="false">
+            How much involvement is required from me?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Enough to keep the content authentic — mainly your input during strategy and approval. We handle the day-to-day production and publishing.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            How does the approval process work?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Content is planned and shared with you ahead of publishing so you can review and approve it before anything goes live.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            Can you manage my personal brand?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes — personal branding is core to what we do, not an add-on. Positioning, tone and visual identity are built around you specifically.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do you work specifically with coaches and consultants?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>We specialize in coaches, consultants, astrologers and other personal-brand-led experts — businesses where the person is the brand.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do you also help with content strategy?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes — every engagement starts with strategy. Content without a strategy behind it is just noise.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            How long does it take to see improvements?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
           <div class="faq-a">
-            <p class="draft-placeholder-block">
-              [Replace with your actual service scope. If included, explain whether strategy, scripting, editing, UGC coordination or only testing is covered.]
-            </p>
+            <p>Most clients see a noticeable shift in engagement quality and inbound conversation within the first 4–6 weeks of consistent posting. By days 60–90, compounding reach and authority positioning turn into predictable client enquiries.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Do you manage WhatsApp follow-up and retargeting?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a">
-            <p class="draft-placeholder-block">
-              [Replace with your actual service scope and the exact channels you manage.]
-            </p>
-          </div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do you guarantee followers or leads?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>No. We don't promise a fixed number of followers, leads or revenue. We focus on building a strategic, consistent presence that creates the conditions for more enquiries.</p></div>
         </div>
+
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">How quickly can we start?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a">
-            <p class="draft-placeholder-block">
-              [Insert your real onboarding timeline.]
-            </p>
-          </div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            How do we get started?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><p>Apply through the form above. If it looks like a fit, we'll book a strategy call to walk through your positioning and content plan.</p></div>
         </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">What happens on the strategy call?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-          <div class="faq-a"><p>We review the key funnel numbers, identify the biggest performance bottleneck and explain the priority actions we would take first. If there is a strong fit, we explain the engagement and next steps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. LEAD GENERATION SECTION -->
+  <section id="lead-gen">
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="eyebrow">READY TO GROW?</span>
+        <h2 style="margin-top:1.1rem;line-height:1.15">Ready To Build A Social Media Presence That Matches Your Expertise?</h2>
+        <p style="margin-top:1.1rem;max-width:38rem;color:var(--text);font-size:1.05rem">
+          Let's build a strategic, premium and consistent digital presence around your expertise.
+        </p>
+        <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.9rem">
+          <button type="button" class="btn btn-accent btn-xl open-apply-modal">BOOK A STRATEGY CALL</button>
+          <button type="button" class="btn btn-ghost btn-xl open-apply-modal">GET MY SOCIAL MEDIA AUDIT</button>
         </div>
+        <p style="margin-top:1.25rem;font-size:0.82rem;color:var(--muted);">
+          For coaches, consultants, astrologers and experts with real expertise to build on.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. FINAL CTA -->
+  <section id="final-cta">
+    <div class="container" style="text-align:center;max-width:44rem;margin-inline:auto">
+      <div class="reveal">
+        <h2 class="section-title" style="max-width:none">Your Expertise Is The Product.<br><span class="gradient-text">Your Social Media Is The Proof.</span></h2>
+        <p class="lead" style="margin:1.25rem auto 0;max-width:34rem">
+          Let The Ads Lancer build a digital presence that communicates your value before the first conversation.
+        </p>
+        <div style="margin-top:2rem"><button type="button" class="btn btn-accent btn-xl open-apply-modal">BOOK A STRATEGY CALL</button></div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- 16. FOOTER -->
 <footer>
-  <div class="container foot-flex">
-    <a href="#top" class="brand-logo"><span class="logo-accent">THE ADS</span> LANCER</a>
-    <p>© 2026 The Ads Lancer. Performance systems for webinar businesses.</p>
+  <div class="container foot-flex" style="flex-wrap:wrap;gap:1.5rem;align-items:flex-start">
+    <div>
+      <a href="#top" class="brand-logo"><span class="logo-accent">THE ADS</span> LANCER</a>
+      <p style="margin-top:0.4rem;font-size:0.88rem;color:var(--muted)">Performance Marketing &amp; Personal Brand Growth</p>
+    </div>
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:1.5rem;font-size:var(--fs-sm)">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#why-us" class="nav-link">About</a>
+      <a href="#proof" class="nav-link">Case Studies</a>
+      <a href="#faq" class="nav-link">FAQs</a>
+      <a href="#lead-gen" class="nav-link">Contact</a>
+    </nav>
+  </div>
+  <div class="container" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:var(--fs-caption);color:var(--muted)">
+    <p>© 2026 The Ads Lancer. Performance Marketing &amp; Personal Brand Growth.</p>
+    <div style="display:flex;gap:1.25rem">
+      <a href="#faq" class="nav-link">Privacy Policy</a>
+      <a href="#faq" class="nav-link">Terms &amp; Conditions</a>
+    </div>
   </div>
 </footer>
 
-  <!-- Sticky Bottom CTA Bar -->
-  <div id="sticky-cta-bar" class="sticky-cta">
-    <div class="container sticky-cta-flex">
-      <p class="sticky-cta-text">Stop wasting money on ads. Find your webinar funnel leaks now.</p>
-      <button type="button" class="btn btn-accent btn-md open-apply-modal">GET MY FUNNEL AUDITED</button>
-    </div>
+<!-- 17. STICKY MOBILE CTA BAR -->
+<div id="sticky-cta-bar" class="sticky-cta">
+  <div class="container sticky-cta-flex">
+    <p class="sticky-cta-text">Build a social media presence that matches your expertise.</p>
+    <button type="button" class="btn btn-accent btn-md open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
   </div>
+</div>
 
+<!-- 18. APPLICATION FORM MODAL DIALOG -->
 <dialog id="apply-modal" aria-labelledby="modal-title">
   <div class="modal-inner">
     <div id="modal-form-content">
       <div class="modal-top">
         <div>
-          <span class="pill tone-accent">Webinar-to-Student Audit</span>
-          <h3 id="modal-title" style="margin-top:0.85rem;font-size:1.4rem">Apply for the audit</h3>
-          <p style="margin-top:0.5rem;font-size:0.86rem;color:var(--muted)">Answer a few questions so we can understand your funnel before the call.</p>
+          <span class="pill tone-accent">Social Media Strategy Application</span>
+          <h3 id="modal-title" style="margin-top:0.85rem;font-size:1.4rem">Apply for Social Media Management</h3>
+          <p style="margin-top:0.5rem;font-size:0.86rem;color:var(--muted)">Answer a few quick questions so we can prepare your strategy call.</p>
         </div>
-        <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close">
+        <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close dialog">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
+
       <form id="audit-form" style="margin-top:1.25rem">
         <div class="grid-fields">
           <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" required placeholder="Full name" /></div>
@@ -658,73 +945,78 @@
             </div>
           </div>
         </div>
+
         <div class="grid-fields">
           <div class="field"><label for="f-email">Email address</label><input id="f-email" name="email" type="email" required placeholder="you@brand.com" /></div>
-          <div class="field"><label for="f-sell">What do you sell?</label><input id="f-sell" name="sell" required placeholder="e.g. Astrology course, mentorship" /></div>
-        </div>
-        <div class="grid-fields">
           <div class="field">
-            <label for="f-niche">Your niche</label>
-            <select id="f-niche" name="niche" required>
-              <option value="" disabled selected>Select your niche...</option>
-              <option value="Astrology">Astrology (Astrology / Tarot / Numerology / Vastu / Healing / Other)</option>
-              <option value="Tarot">Tarot (Astrology / Tarot / Numerology / Vastu / Healing / Other)</option>
-              <option value="Numerology">Numerology (Astrology / Tarot / Numerology / Vastu / Healing / Other)</option>
-              <option value="Vastu">Vastu (Astrology / Tarot / Numerology / Vastu / Healing / Other)</option>
-              <option value="Healing">Healing (Astrology / Tarot / Numerology / Vastu / Healing / Other)</option>
-              <option value="Other">Other</option>
+            <label for="f-profession">Profession / niche</label>
+            <select id="f-profession" name="profession" required>
+              <option value="" disabled selected>Select your profession...</option>
+              <option value="Coach">Coach</option>
+              <option value="Business Coach">Business Coach</option>
+              <option value="Life Coach">Life Coach</option>
+              <option value="Career Coach">Career Coach</option>
+              <option value="Consultant">Consultant</option>
+              <option value="Financial / Investment Consultant">Financial / Investment Consultant</option>
+              <option value="Astrologer">Astrologer</option>
+              <option value="Tarot Reader">Tarot Reader</option>
+              <option value="Numerologist">Numerologist</option>
+              <option value="Spiritual Coach">Spiritual Coach</option>
+              <option value="Occult Practitioner">Occult Practitioner</option>
+              <option value="Other">Other personal-brand expert</option>
             </select>
           </div>
-          <div class="field"><label for="f-price">Flagship offer price</label><input id="f-price" name="price" required placeholder="e.g. ₹25,000" /></div>
         </div>
+
         <div class="grid-fields">
+          <div class="field"><label for="f-instagram">Instagram handle</label><input id="f-instagram" name="instagram" required placeholder="@yourhandle" /></div>
           <div class="field">
-            <label for="f-spend">Current monthly ad spend</label>
-            <select id="f-spend" name="spend" required>
-              <option value="" disabled selected>Select spend range...</option>
-              <option value="Under ₹1L">Under ₹1L</option>
-              <option value="₹1L – ₹5L">₹1L – ₹5L</option>
-              <option value="₹5L – ₹15L">₹5L – ₹15L</option>
-              <option value="₹15L+">₹15L+</option>
+            <label for="f-help">What do you need help with?</label>
+            <select id="f-help" name="help_needed" required>
+              <option value="" disabled selected>Select an option...</option>
+              <option value="Content Strategy">Content strategy</option>
+              <option value="Content Creation">Content creation (reels/posts)</option>
+              <option value="Personal Branding">Personal branding</option>
+              <option value="Consistency & Posting">Consistency &amp; posting</option>
+              <option value="Full Social Media Management">Full social media management</option>
+              <option value="Not Sure Yet">Not sure yet</option>
             </select>
           </div>
-          <div class="field"><label for="f-registrations">Average monthly registrations</label><input id="f-registrations" name="registrations" type="number" required placeholder="e.g. 500" /></div>
         </div>
+
         <div class="grid-fields">
-          <div class="field"><label for="f-attendance">Average webinar attendance / show-up rate</label><input id="f-attendance" name="attendance" required placeholder="e.g. 30%" /></div>
-          <div class="field"><label for="f-sales">Average sales per webinar</label><input id="f-sales" name="sales" required placeholder="e.g. 5 sales" /></div>
+          <div class="field">
+            <label for="f-budget">Approximate monthly marketing budget</label>
+            <select id="f-budget" name="budget" required>
+              <option value="" disabled selected>Select a range...</option>
+              <option value="Under ₹25,000">Under ₹25,000</option>
+              <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+              <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+              <option value="₹1,00,000+">₹1,00,000+</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-challenge">Current social media challenge</label><input id="f-challenge" name="challenge" required placeholder="e.g. Inconsistent posting, no strategy" /></div>
         </div>
-        <div class="field">
-          <label for="f-bottleneck">Primary bottleneck</label>
-          <select id="f-bottleneck" name="bottleneck" required>
-            <option value="" disabled selected>Select primary bottleneck...</option>
-            <option value="Lead Generation / CPL">Lead Generation / CPL</option>
-            <option value="Show-up / Attendance">Show-up / Attendance</option>
-            <option value="Offer Retention">Offer Pitch Retention</option>
-            <option value="Purchase Rate">Webinar Purchase Rate</option>
-            <option value="Customer Acquisition">Customer Acquisition (CAC)</option>
-            <option value="ROAS">Profitability / ROAS</option>
-            <option value="Funnel Scale">Funnel Scale</option>
-          </select>
-        </div>
-        <div class="grid-fields">
-          <div class="field"><label for="f-scale-timeline">How soon do you want to scale?</label><input id="f-scale-timeline" name="scale_timeline" required placeholder="e.g. Immediately" /></div>
-          <div class="field"><label for="f-url">Website / Instagram / landing page URL</label><input id="f-url" name="url" type="url" required placeholder="e.g. https://instagram.com/yourhandle" /></div>
-        </div>
-        <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:1.5rem">SUBMIT & CHECK FIT</button>
+
+        <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:1.5rem">APPLY FOR SOCIAL MEDIA MANAGEMENT</button>
+        <p style="margin-top:0.85rem;font-size:0.75rem;color:var(--muted);text-align:center">Your information is used only to prepare your strategy call — never shared or sold.</p>
       </form>
     </div>
-    <div id="modal-success-content" style="display:none">
-      <div class="success-ring">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+
+    <div id="modal-success-content" style="display:none;text-align:center;padding:1.5rem 0.5rem">
+      <div class="success-ring" style="margin-inline:auto">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h3 style="font-size:1.3rem">Application received</h3>
-      <p style="margin-top:0.6rem;font-size:0.9rem;color:var(--muted)">We'll review your funnel details and get back to you if the Webinar-to-Student Audit is a fit for your business.</p>
+      <h3 style="font-size:1.35rem;margin-top:1rem">Application received</h3>
+      <p style="margin-top:0.6rem;font-size:0.9rem;color:var(--muted);max-width:24rem;margin-inline:auto">
+        We'll review your profile and get back to you if this is a strong fit for a strategy call.
+      </p>
       <button type="button" class="btn btn-ghost btn-md" style="margin-top:1.5rem" onclick="document.getElementById('apply-modal').close()">Close</button>
     </div>
   </div>
 </dialog>
 
-    <script src="site.js" defer></script>
-  </body>
+<script src="site.js" defer></script>
+</body>
 </html>
