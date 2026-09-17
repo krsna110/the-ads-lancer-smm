@@ -694,4 +694,475 @@ dialog#apply-modal {
   }
 }
 
+/* ── Section 03 & 06: Mechanism & Workflow Chains ── */
+.mechanism-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 2rem auto 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  max-width: 56rem;
+}
+.mech-step {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.mech-step.highlight {
+  color: var(--accent-bright);
+}
+.mech-arrow {
+  color: var(--muted);
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+@media (max-width: 700px) {
+  .mechanism-bar {
+    border-radius: var(--radius);
+    justify-content: flex-start;
+  }
+}
+
+/* ── Section 04: What We Manage (10 System Blocks) ── */
+.manage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 640px) {
+  .manage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .manage-grid { grid-template-columns: repeat(5, 1fr); }
+  .manage-card { min-height: 100%; }
+}
+.manage-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.manage-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.08);
+}
+.manage-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  background: var(--accent-soft);
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+}
+.manage-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.55rem;
+}
+.manage-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin-top: auto;
+}
+
+/* ── Section 07: Content Mix (6 Pillars) ── */
+.mix-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 600px) { .mix-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .mix-grid { grid-template-columns: repeat(3, 1fr); } }
+.mix-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mix-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -10px rgba(79, 70, 229, 0.12);
+}
+.mix-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Section 08: Differentiation Table ── */
+.diff-wrap {
+  overflow-x: auto;
+  margin-top: var(--space-5);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+}
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.diff-table th {
+  padding: 1.2rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: left;
+  border-bottom: 2px solid var(--line);
+}
+.diff-table th.typical-head {
+  background: #f8fafc;
+  color: var(--muted);
+  width: 48%;
+}
+.diff-table th.tal-head {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(8, 145, 178, 0.08));
+  color: var(--accent-bright);
+  border-left: 1px solid rgba(79, 70, 229, 0.15);
+  width: 52%;
+}
+.diff-table td {
+  padding: 1.1rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--line);
+}
+.diff-table tr:last-child td { border-bottom: none; }
+.diff-table td.typical-cell {
+  background: #ffffff;
+  color: var(--muted);
+}
+.diff-table td.tal-cell {
+  background: rgba(79, 70, 229, 0.02);
+  color: var(--ink);
+  font-weight: 600;
+  border-left: 1px solid rgba(79, 70, 229, 0.12);
+}
+.diff-icon-bad {
+  color: #94a3b8;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.diff-icon-good {
+  color: var(--good);
+  margin-right: 0.5rem;
+  font-weight: 800;
+}
+
+/* ── Section 09: Pre-Sales Trust Pillars ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 768px) {
+  .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.pillar-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.6rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--cyan));
+}
+.pillar-badge {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+/* ── Section 10: Case Studies ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 900px) {
+  .cases-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.case-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(79, 70, 229, 0.15);
+}
+.case-metric {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+}
+.case-niche {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+.case-block {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+.case-block strong {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.case-outcome {
+  margin-top: auto;
+  padding: 0.9rem;
+  background: rgba(5, 150, 105, 0.06);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-radius: 12px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #065f46;
+}
+.case-outcome strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--good);
+  margin-bottom: 0.2rem;
+}
+
+/* ── Section 11: Testimonials ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 768px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+.quote-icon {
+  color: rgba(79, 70, 229, 0.25);
+  margin-bottom: 0.75rem;
+}
+.testimonial-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.client-info {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+.client-avatar {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+}
+.client-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.client-title {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ── Section 15: Application Steps ── */
+.app-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: var(--space-5);
+}
+@media (min-width: 768px) {
+  .app-steps-grid { grid-template-columns: repeat(5, 1fr); }
+}
+.app-step-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.app-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  background: var(--accent-soft);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.8rem;
+}
+.app-step-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+.app-step-desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ── Enhanced Application Form Styling ── */
+.app-form-wrap {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  box-shadow: 0 16px 40px -15px rgba(79, 70, 229, 0.08);
+}
+.field-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+@media (min-width: 640px) {
+  .field-grid-2 { grid-template-columns: 1fr 1fr; }
+}
+.form-field {
+  margin-bottom: 1.1rem;
+}
+.form-field label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.form-field label .req {
+  color: var(--leak);
+  margin-left: 0.2rem;
+}
+.form-field label .opt {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.78rem;
+  margin-left: 0.35rem;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.78rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 0.92rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-sans);
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.tel-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.tel-code {
+  width: 7.2rem;
+  flex-shrink: 0;
+}
+
+
 

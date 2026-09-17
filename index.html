@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Ads Lancer — Social Media Management for Coaches, Consultants &amp; Experts</title>
-    <meta name="description" content="We help coaches, consultants, astrologers and personal-brand experts turn social media into an authority-building, client-generation platform — not just another content calendar." />
+    <title>The Ads Lancer — Social Media Presence for Coaches, Consultants &amp; Experts</title>
+    <meta name="description" content="We turn your knowledge, experience and personality into a strategic social media presence that builds authority, earns trust and supports qualified enquiries." />
     <meta name="author" content="The Ads Lancer" />
-    <meta property="og:title" content="The Ads Lancer — Social Media Management for Coaches, Consultants &amp; Experts" />
-    <meta property="og:description" content="Strategy, content and personal branding for expert-led businesses — built as one system, not a pile of random posts." />
+    <meta property="og:title" content="The Ads Lancer — Strategic Social Media Management" />
+    <meta property="og:description" content="We turn your expertise into a strategic social media presence that builds authority, earns trust and supports qualified enquiries." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="site.css" />
     <style>
-      /* Page-specific conversion enhancements */
+      /* Component layout refinements */
       .ig-preview-box {
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.9));
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92));
         border: 1px solid rgba(79, 70, 229, 0.2);
         border-radius: var(--radius);
         box-shadow: 0 20px 50px -15px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.85);
@@ -55,52 +55,67 @@
       .ig-tile:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08); }
       .ig-tile-icon { font-size: 1.15rem; margin-bottom: 0.25rem; }
 
-      .niche-grid { display: grid; gap: 1.4rem; margin-top: var(--space-6); grid-template-columns: 1fr; }
-      @media (min-width: 680px) { .niche-grid { grid-template-columns: repeat(2, 1fr); } }
-
-      .proof-metric {
-        font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent-bright); line-height: 1.2;
+      /* Dialog modal adjustments */
+      dialog#apply-modal {
+        border: none;
+        border-radius: 20px;
+        padding: 0;
+        max-width: 38rem;
+        width: 92vw;
+        background: transparent;
+        box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
       }
-
-      /* Workflow Chain */
-      .workflow-pill-wrap {
-        display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.65rem;
-        margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
-        letter-spacing: 0.06em;
+      dialog#apply-modal::backdrop {
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(6px);
       }
-      .wf-item {
-        background: #ffffff; padding: 0.55rem 1rem; border-radius: 999px;
-        border: 1px solid var(--line); box-shadow: 0 2px 6px rgba(15,23,42,0.04);
+      .modal-box {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: clamp(1.4rem, 3.5vw, 2.25rem);
+        max-height: 90vh;
+        overflow-y: auto;
+        border: 1px solid var(--line);
+      }
+      .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .modal-close {
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        width: 2.2rem;
+        height: 2.2rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: var(--muted);
+        transition: color 0.2s, background 0.2s;
+        flex-shrink: 0;
+      }
+      .modal-close:hover {
         color: var(--ink);
+        background: var(--line);
       }
-      .wf-arrow { color: var(--accent-bright); font-size: 0.95rem; }
-
-      /* Interactive Estimator */
-      .estimator-box {
-        background: linear-gradient(135deg, rgba(79,70,229,0.05), rgba(8,145,178,0.05));
-        border: 1px solid rgba(79,70,229,0.2); border-radius: 18px;
-        padding: clamp(1.5rem, 3vw, 2.25rem); margin-top: var(--space-5);
+      .success-box {
+        text-align: center;
+        padding: 2.5rem 1rem;
       }
-      .estimator-grid {
-        display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;
-      }
-      @media (min-width: 820px) { .estimator-grid { grid-template-columns: 1.2fr 1fr; } }
-      .estimator-metrics {
-        background: #ffffff; border: 1px solid var(--line); border-radius: 14px;
-        padding: 1.5rem; text-align: center; box-shadow: 0 10px 30px -10px rgba(79,70,229,0.15);
-      }
-
-      /* Smooth Form Control Styling */
-      .modal-inner { max-width: 34rem; }
-      .field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
-      .field input, .field select {
-        width: 100%; padding: 0.72rem 0.9rem; border: 1px solid var(--line);
-        border-radius: 10px; background: #ffffff; font-size: 0.92rem; color: var(--ink);
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .field input:focus, .field select:focus {
-        outline: none; border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(79,70,229,0.14);
+      .success-icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1.25rem;
+        border-radius: 999px;
+        background: rgba(5, 150, 105, 0.1);
+        color: var(--good);
+        display: grid;
+        place-items: center;
       }
     </style>
   </head>
@@ -111,22 +126,23 @@
 
 <a href="#top" class="skip-link">Skip to main content</a>
 
-<!-- NAVIGATION -->
+<!-- SITE HEADER -->
 <header class="site-header">
   <div class="container nav-flex">
     <a href="#top" class="brand-logo"><span class="logo-accent">THE ADS</span> LANCER</a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#problem" class="nav-link">The Problem</a>
-      <a href="#services" class="nav-link">Services</a>
+      <a href="#philosophy" class="nav-link">Philosophy</a>
+      <a href="#what-we-manage" class="nav-link">What We Manage</a>
+      <a href="#niche-fit" class="nav-link">Niche Fit</a>
       <a href="#process" class="nav-link">Process</a>
-      <a href="#proof" class="nav-link">Proof</a>
-      <a href="#fit" class="nav-link">Who It's For</a>
+      <a href="#case-studies" class="nav-link">Case Studies</a>
       <a href="#faq" class="nav-link">FAQ</a>
     </nav>
     <div style="display:flex;align-items:center;gap:0.6rem">
-      <button type="button" class="btn btn-accent btn-md nav-cta open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
+      <button type="button" class="btn btn-accent btn-md nav-cta open-apply-modal">APPLY FOR A STRATEGY CALL</button>
       <button type="button" id="mobile-toggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
     </div>
   </div>
@@ -135,110 +151,106 @@
       <nav aria-label="Mobile">
         <ul class="mobile-nav-list">
           <li><a href="#problem" class="nav-link">The Problem</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+          <li><a href="#what-we-manage" class="nav-link">What We Manage</a></li>
+          <li><a href="#niche-fit" class="nav-link">Niche Fit</a></li>
           <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#proof" class="nav-link">Proof</a></li>
-          <li><a href="#fit" class="nav-link">Who It's For</a></li>
+          <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
-          <li style="margin-top:0.6rem"><button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%">GET MY SOCIAL MEDIA STRATEGY</button></li>
+          <li style="margin-top:0.6rem">
+            <button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%">APPLY FOR A STRATEGY CALL</button>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
 </header>
 
-<main>
-  <!-- 1. HERO SECTION -->
-  <section id="top" class="hero">
+<main id="top">
+
+  <!-- 01. HERO SECTION -->
+  <section class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <span class="pill tone-accent"><span class="dot"><i></i><i></i></span> FOR COACHES, CONSULTANTS, ASTROLOGERS &amp; PERSONAL BRANDS</span>
-        <h1 style="margin-top:1rem">Turn Your Social Media Into<br><span class="gradient-text">Your Personal Brand's Growth Engine.</span></h1>
-        <p class="lead">We manage the entire social media presence for coaches, consultants, astrologers and experts — strategy, content planning, creative production, posting and optimization, run as one system instead of scattered tasks.</p>
+        <span class="eyebrow">FOR COACHES, CONSULTANTS, ASTROLOGERS &amp; EXPERT-LED PERSONAL BRANDS</span>
+        <h1 style="margin-top:1.1rem">Your Expertise Deserves<br><span class="gradient-text">More Than Random Posts.</span></h1>
         
-        <div class="hero-actions">
-          <button type="button" class="btn btn-accent btn-xl open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
-          <a href="#process" class="btn btn-ghost btn-xl">SEE HOW WE WORK</a>
-        </div>
-
-        <p class="hero-note" style="margin-top: 1rem; font-size: var(--fs-caption); color: var(--muted); display:flex; align-items:flex-start; gap:0.5rem">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--good);flex-shrink:0;margin-top:0.2rem"><polyline points="20 6 9 17 4 12"/></svg>
-          <span><strong>Credibility:</strong> Built for coaches, consultants, astrologers &amp; personal brands with real expertise to communicate.</span>
+        <p class="lead" style="margin-top:1.25rem">
+          We turn your knowledge, experience and personality into a strategic social media presence that builds authority, earns trust and supports qualified enquiries.
         </p>
         
-        <p class="hero-note" style="margin-top: 0.5rem; font-size: var(--fs-caption); color: var(--muted); display:flex; align-items:flex-start; gap:0.5rem">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--accent-bright);flex-shrink:0;margin-top:0.2rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <span><strong>Disclaimer:</strong> No guaranteed followers or overnight growth. We build the strategy and system — consistent growth follows the work.</span>
+        <p style="margin-top:0.85rem;font-size:0.95rem;color:var(--text);line-height:1.6">
+          You focus on your clients and your expertise. We handle the strategy, content planning, scripting, creative production, publishing and optimization behind your social media.
         </p>
-
-        <!-- Stats intro and numbers -->
-        <p style="margin-top: var(--space-5); font-family: var(--font-mono); font-size: var(--fs-caption); color: var(--muted); letter-spacing: 0.03em;">
-          Backed by a performance marketing team already managing:
-        </p>
-        <div class="hero-stats" data-animate style="margin-top:0.75rem">
-          <div><div class="k"><span data-count="150" data-suffix="+">150+</span></div><div class="l">campaigns managed</div></div>
-          <div><div class="k">₹<span data-count="50" data-suffix="+ Cr">50+ Cr</span></div><div class="l">ad spend</div></div>
-          <div><div class="k">₹<span data-count="80" data-suffix="+ Cr">80+ Cr</span></div><div class="l">revenue generated</div></div>
-          <div><div class="k"><span data-count="5" data-suffix="x">5x</span></div><div class="l">best verified ROAS</div></div>
+        
+        <div class="hero-actions" style="margin-top:1.85rem;display:flex;flex-wrap:wrap;gap:0.9rem">
+          <button type="button" class="btn btn-accent btn-xl open-apply-modal">APPLY FOR A STRATEGY CALL</button>
+          <a href="#process" class="btn btn-ghost btn-xl">SEE HOW IT WORKS</a>
         </div>
+
+        <p class="hero-note" style="margin-top:1.35rem;font-size:var(--fs-caption);color:var(--muted);display:flex;align-items:flex-start;gap:0.55rem">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--good);flex-shrink:0;margin-top:0.15rem"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>For experts who want a professional, consistent and strategically managed digital presence — not just another posting service.</span>
+        </p>
       </div>
 
-      <!-- Hero Visual: Strategic Content Grid -->
+      <!-- Hero Visual: Strategic Mechanism Display -->
       <div class="reveal">
-        <div class="ig-preview-box" data-animate style="max-width:28rem;margin-inline:auto;">
+        <div class="ig-preview-box" data-animate style="max-width:28.5rem;margin-inline:auto;">
           <div class="ig-header-row">
             <div class="ig-avatar">AL</div>
             <div>
               <p class="ig-handle">
-                @your.expert.brand
+                @your.expert.presence
                 <svg class="ig-badge-verified" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
               </p>
-              <p class="ig-bio">Coach · Consultant · Expert — helping clients get real results.</p>
+              <p class="ig-bio">Coach · Consultant · Astrologer · Subject-Matter Expert</p>
             </div>
           </div>
 
           <div class="ig-stats-strip">
-            <div><div class="ig-stats-num">124</div><div class="ig-stats-label">Strategic Posts</div></div>
-            <div><div class="ig-stats-num">48.2k</div><div class="ig-stats-label">Audience</div></div>
-            <div><div class="ig-stats-num">₹18.4L</div><div class="ig-stats-label">Inbound Deals</div></div>
+            <div><div class="ig-stats-num">Strategic</div><div class="ig-stats-label">Positioning</div></div>
+            <div><div class="ig-stats-num">Authority</div><div class="ig-stats-label">Content Engine</div></div>
+            <div><div class="ig-stats-num">Qualified</div><div class="ig-stats-label">Client Inquiries</div></div>
           </div>
 
           <div class="ig-grid">
             <div class="ig-tile tone-accent">
               <span class="ig-tile-icon">🎯</span>
               <span>Authority</span>
-              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">2.4k Saves</span>
+              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">Deep Trust</span>
             </div>
             <div class="ig-tile tone-good">
               <span class="ig-tile-icon">📚</span>
               <span>Educate</span>
-              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">1.8k Shares</span>
+              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">Save &amp; Share</span>
             </div>
             <div class="ig-tile tone-warn">
               <span class="ig-tile-icon">✨</span>
-              <span>Personal</span>
-              <span style="font-size:0.6rem;color:var(--warn);margin-top:0.2rem">Trust Hook</span>
+              <span>Familiarity</span>
+              <span style="font-size:0.6rem;color:var(--warn);margin-top:0.2rem">Real Person</span>
             </div>
             <div class="ig-tile tone-good">
               <span class="ig-tile-icon">🤝</span>
-              <span>Relatable</span>
-              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">Community</span>
+              <span>Connection</span>
+              <span style="font-size:0.6rem;color:var(--good);margin-top:0.2rem">Human Bond</span>
             </div>
             <div class="ig-tile tone-accent">
               <span class="ig-tile-icon">⚡</span>
-              <span>Opinion</span>
-              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">POV / Voice</span>
+              <span>Point of View</span>
+              <span style="font-size:0.6rem;color:var(--accent-bright);margin-top:0.2rem">Distinct Belief</span>
             </div>
             <div class="ig-tile tone-leak">
               <span class="ig-tile-icon">🔥</span>
-              <span>Offer</span>
-              <span style="font-size:0.6rem;color:var(--leak);margin-top:0.2rem">Inquiries</span>
+              <span>Drive Action</span>
+              <span style="font-size:0.6rem;color:var(--leak);margin-top:0.2rem">High-Ticket DMs</span>
             </div>
           </div>
 
-          <p class="console-note" style="margin-top:1.15rem">
-            <b>Visual caption:</b> Every post has a job. Random content fills a grid — strategic content fills your inbox with enquiries.
-          </p>
+          <div class="console-note" style="margin-top:1.15rem;font-size:0.8rem;line-height:1.5">
+            <strong>The Underlying Mechanism:</strong><br>
+            Expertise → Strategy → Content → Authority → Trust → Business Conversations
+          </div>
         </div>
       </div>
     </div>
@@ -247,506 +259,733 @@
   <!-- MARQUEE STRIP -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Occult Experts</span><span><em>/</em> Personal Branding</span><span><em>/</em> Content Systems</span><span><em>/</em> Authority Building</span>
-      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Occult Experts</span><span><em>/</em> Personal Branding</span><span><em>/</em> Content Systems</span><span><em>/</em> Authority Building</span>
+      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Spiritual Experts</span><span><em>/</em> Personal Brands</span><span><em>/</em> Authority Building</span><span><em>/</em> Strategic Systems</span>
+      <span>Coaches</span><span><em>/</em> Consultants</span><span><em>/</em> Astrologers &amp; Spiritual Experts</span><span><em>/</em> Personal Brands</span><span><em>/</em> Authority Building</span><span><em>/</em> Strategic Systems</span>
     </div>
   </div>
 
-  <!-- 2. THE PROBLEM -->
+  <!-- 02. PROBLEM RECOGNITION -->
   <section id="problem">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">The Problem</span>
-        <h2 class="section-title">Your Expertise Is Strong.<br><span style="color:var(--muted)">Your Social Media Should Show It.</span></h2>
-        <p class="section-lead">You've spent years mastering your domain. But without an aligned system, potential high-ticket clients never see your real value.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">The Real Problem</span>
+        <h2 class="section-title">Your Problem Isn't a Lack of Expertise.</h2>
+        <p class="section-lead" style="color:var(--ink);font-weight:600">
+          It's that your social media isn't communicating that expertise consistently enough.
+        </p>
       </div>
 
       <div class="grid-3" style="margin-top:var(--space-5)">
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">01</span>
           <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
-            You know your craft. But inconsistent posting, no real plan and depending on random designers means your social media doesn't say so.
+            You may already be excellent at what you do. You may have years of experience, real knowledge, strong client results and something genuinely valuable to offer.
           </p>
         </div>
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">02</span>
           <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
-            Reels can get views and still generate zero enquiries — attention without positioning and authority doesn't convert into business.
+            But your social media can still look like random posts, inconsistent branding, educational content that gets consumed but forgotten, or a profile that doesn't clearly communicate your value.
           </p>
         </div>
         <div class="card card-pad card-hover reveal">
           <span class="num-chip">03</span>
           <p style="margin-top:1.25rem;font-size:0.95rem;line-height:1.68;color:var(--text)">
-            That is why we do not just fill your grid. We build content around authority, trust and conversion — so your expertise is what people actually see.
+            A potential client can discover you and still not understand why they should trust you. They can watch your content and still not know what makes you different. They can visit your profile and still leave without taking the next step.
           </p>
         </div>
       </div>
 
-      <!-- Before vs After Comparison -->
-      <div class="vs reveal" style="margin-top:var(--space-6)">
-        <div>
-          <span class="pill" style="color:var(--leak);border-color:rgba(225,29,72,0.35)">BEFORE</span>
-          <ul class="flow-list flow-bad">
-            <li>Random Content</li>
-            <li>Inconsistent Branding</li>
-            <li>Low Authority</li>
-            <li>Missed Opportunities</li>
-          </ul>
+      <div class="reveal" style="margin-top:2rem;text-align:center">
+        <p style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--accent-bright)">
+          That's where strategy matters.
+        </p>
+        <div style="margin-top:1.25rem">
+          <button type="button" class="btn btn-accent btn-lg open-apply-modal">I WANT A STRATEGIC SOCIAL PRESENCE</button>
         </div>
-        <div class="vs-badge">➔</div>
-        <div>
-          <span class="pill tone-accent">AFTER</span>
-          <ul class="flow-list flow-good">
-            <li>Strategic Content</li>
-            <li>Premium Presence</li>
-            <li>Strong Authority</li>
-            <li>More Enquiries</li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. CONTENT PHILOSOPHY / MECHANISM -->
+  <section id="philosophy" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:44rem;margin-inline:auto">
+        <span class="eyebrow">Content Philosophy</span>
+        <h2 class="section-title" style="margin-inline:auto">Stop Treating Social Media Like a To-Do List.</h2>
+        <p class="section-lead" style="margin-inline:auto;color:var(--ink);font-weight:700">
+          Your content should have a job.
+        </p>
+        <p style="margin-top:1rem;font-size:0.96rem;line-height:1.7;color:var(--text)">
+          We don't believe the goal is to simply 'post consistently.' Being active on Instagram isn't the same as building a brand. Every piece of content should help do at least one important job.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top:var(--space-5)">
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--accent-bright)">✓</span> Build Authority
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Show people that you know what you are talking about.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--good)">✓</span> Educate
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Turn complicated expertise into content people can understand and remember.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--warn)">✓</span> Build Familiarity
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Let people understand the person behind the expertise.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--good)">✓</span> Create Connection
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Make your brand feel human and worth following.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--accent-bright)">✓</span> Establish Your Point of View
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Give people a reason to remember what you believe, not just what you know.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.05rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem">
+            <span style="color:var(--leak)">✓</span> Drive Action
+          </h3>
+          <p style="margin-top:0.6rem;font-size:0.88rem;line-height:1.6;color:var(--text)">
+            Create natural opportunities for people to enquire, book, message or explore your offer.
+          </p>
         </div>
       </div>
 
-      <p class="callout reveal" style="margin-top:var(--space-4)">
-        <strong>Callout:</strong> We find where trust breaks down in your content, fix the highest-impact layer first, then build consistency on top of what's working.
+      <!-- Strategic Mechanism Strip -->
+      <div class="mechanism-bar reveal">
+        <span class="mech-step">Expertise</span>
+        <span class="mech-arrow">➔</span>
+        <span class="mech-step highlight">Strategy</span>
+        <span class="mech-arrow">➔</span>
+        <span class="mech-step">Content</span>
+        <span class="mech-arrow">➔</span>
+        <span class="mech-step highlight">Authority</span>
+        <span class="mech-arrow">➔</span>
+        <span class="mech-step">Trust</span>
+        <span class="mech-arrow">➔</span>
+        <span class="mech-step highlight">Business Conversations</span>
+      </div>
+
+      <p class="reveal" style="text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;color:var(--ink)">
+        Random content fills a feed. Strategic content builds a brand.
       </p>
     </div>
   </section>
 
-  <!-- 3. SERVICES -->
-  <section id="services">
+  <!-- 04. WHAT WE MANAGE -->
+  <section id="what-we-manage">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Services</span>
-        <h2 class="section-title">Everything Your Social Media Needs.<br><span class="gradient-text">Under One Roof.</span></h2>
-        <p class="section-lead">Social media management as a complete system — not isolated tasks split across different freelancers.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Full Management</span>
+        <h2 class="section-title">What We Actually Manage For You</h2>
+        <p class="section-lead">
+          One complete social media system — instead of scattered freelancers and disconnected tasks.
+        </p>
       </div>
 
-      <div class="layers reveal" style="margin-top:var(--space-5)">
-        <div class="layer"><span class="num-chip">01</span><h3>Social Media Strategy</h3><p>A customized strategy built around your niche, positioning, audience and business goals.</p></div>
-        <div class="layer"><span class="num-chip">02</span><h3>Content Strategy</h3><p>Monthly content pillars, formats, topics and themes — planned, not improvised.</p></div>
-        <div class="layer"><span class="num-chip">03</span><h3>Content Creation</h3><p>High-quality reels, carousels and static posts spanning educational, personal and authority-building content.</p></div>
-        <div class="layer"><span class="num-chip">04</span><h3>Personal Branding</h3><p>A consistent visual and communication style that makes you instantly recognizable.</p></div>
-        <div class="layer"><span class="num-chip">05</span><h3>Copywriting</h3><p>Hooks, captions and CTAs written to earn attention and prompt a response.</p></div>
-        <div class="layer"><span class="num-chip">06</span><h3>Reels &amp; Short-Form Content</h3><p>Short-form video concepts built around education, authority, relatability and conversion.</p></div>
-        <div class="layer"><span class="num-chip">07</span><h3>Content Calendar</h3><p>A structured, planned-ahead monthly calendar so nothing is decided the night before.</p></div>
-        <div class="layer"><span class="num-chip">08</span><h3>Publishing &amp; Management</h3><p>Scheduling, publishing and day-to-day management of your social presence.</p></div>
-        <div class="layer"><span class="num-chip">09</span><h3>Performance Analysis</h3><p>Tracking what's actually happening with your content, not just assuming it's working.</p></div>
-        <div class="layer"><span class="num-chip">10</span><h3>Growth-Focused Optimization</h3><p>Identifying which formats, topics and messaging perform, and doing more of that.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. BUILT FOR YOUR NICHE -->
-  <section id="niches">
-    <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Built For Your Niche</span>
-        <h2 class="section-title">Built Around Your Niche.<br><span style="color:var(--muted)">Not A Generic Content Calendar.</span></h2>
-        <p class="section-lead">Different domains require specialized positioning. We craft tailored messaging that resonates with your specific client base.</p>
-      </div>
-
-      <div class="niche-grid reveal">
-        <div class="card card-pad card-hover">
-          <span class="num-chip">01</span>
-          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Coaches</h3>
-          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
-            Build authority, trust and a recognizable personal brand that commands premium program fees and fills your client roster.
-          </p>
+      <div class="manage-grid">
+        <div class="manage-card reveal">
+          <span class="manage-num">01</span>
+          <h3 class="manage-title">Social Media Strategy</h3>
+          <p class="manage-desc">Understand the niche, audience, positioning, offer and business goals. Build the strategy around the business, not a generic template.</p>
         </div>
-
-        <div class="card card-pad card-hover">
-          <span class="num-chip">02</span>
-          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Consultants</h3>
-          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
-            Communicate expertise and create content that attracts serious prospects, corporate inquiries, and high-ticket retainer clients.
-          </p>
+        <div class="manage-card reveal">
+          <span class="manage-num">02</span>
+          <h3 class="manage-title">Content Strategy</h3>
+          <p class="manage-desc">Monthly content direction covering themes, pillars, formats, topics and messaging angles.</p>
         </div>
-
-        <div class="card card-pad card-hover">
-          <span class="num-chip">03</span>
-          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Astrologers &amp; Spiritual Experts</h3>
-          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
-            Build trust, credibility and a strong educational content ecosystem that breaks through marketplace skepticism and books deep consultations.
-          </p>
+        <div class="manage-card reveal">
+          <span class="manage-num">03</span>
+          <h3 class="manage-title">Content Creation</h3>
+          <p class="manage-desc">Reels, carousels, static posts and other social content built around positioning and audience.</p>
         </div>
-
-        <div class="card card-pad card-hover">
-          <span class="num-chip">04</span>
-          <h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Personal Brands &amp; Experts</h3>
-          <p style="margin-top:0.6rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.6">
-            Turn expertise, opinions and knowledge into high-quality content, consistently — without you getting bogged down in day-to-day execution.
-          </p>
+        <div class="manage-card reveal">
+          <span class="manage-num">04</span>
+          <h3 class="manage-title">Personal Branding</h3>
+          <p class="manage-desc">Visual identity, tone and communication style developed to make the brand more recognizable and consistent.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">05</span>
+          <h3 class="manage-title">Scripting &amp; Copywriting</h3>
+          <p class="manage-desc">Hooks, scripts, captions, messaging and CTAs so content has something meaningful to say.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">06</span>
+          <h3 class="manage-title">Reels &amp; Short-Form</h3>
+          <p class="manage-desc">Short-form content built around education, authority, relatability, personality and conversion.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">07</span>
+          <h3 class="manage-title">Content Calendar</h3>
+          <p class="manage-desc">Content planned in advance so the account runs on a system rather than last-minute decisions.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">08</span>
+          <h3 class="manage-title">Publishing &amp; Management</h3>
+          <p class="manage-desc">Scheduling, publishing and ongoing management handled by the team.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">09</span>
+          <h3 class="manage-title">Performance Analysis</h3>
+          <p class="manage-desc">Review what the audience is actually responding to — not just whether the content was posted.</p>
+        </div>
+        <div class="manage-card reveal">
+          <span class="manage-num">10</span>
+          <h3 class="manage-title">Continuous Optimization</h3>
+          <p class="manage-desc">Use content performance and audience response to improve future content.</p>
         </div>
       </div>
 
-      <div class="reveal" style="margin-top:var(--space-5);text-align:center">
-        <button type="button" class="btn btn-accent btn-lg open-apply-modal">BUILD MY PERSONAL BRAND</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. HOW IT RUNS (WORKFLOW) -->
-  <section id="workflow">
-    <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">How It Runs</span>
-        <h2 class="section-title">One System.<br><span style="color:var(--muted)">Not Ten Different Freelancers.</span></h2>
-        <p class="section-lead">A single frictionless assembly line that turns your raw knowledge into an authority engine.</p>
-      </div>
-
-      <div class="reveal" style="margin-top:var(--space-5);text-align:center;padding:clamp(1.5rem, 3vw, 2.25rem);border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);box-shadow:var(--shadow)">
-        <span class="pill tone-accent" style="margin-bottom:0.75rem">The Full Workflow Chain</span>
-        
-        <div class="workflow-pill-wrap">
-          <span class="wf-item">STRATEGY</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">IDEATION</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">SCRIPTING</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">CREATIVE PRODUCTION</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">APPROVAL</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">PUBLISHING</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item">ANALYSIS</span>
-          <span class="wf-arrow">➔</span>
-          <span class="wf-item" style="background:var(--accent);color:#fff;border-color:var(--accent)">OPTIMIZATION</span>
-        </div>
-      </div>
-
-      <p class="callout reveal" style="margin-top:var(--space-4)">
-        <strong>Callout:</strong> You don't manage multiple freelancers or spend hours thinking about what to post next. We run the entire system end-to-end.
+      <p class="reveal" style="margin-top:2rem;font-size:1.02rem;color:var(--text);border-left:3px solid var(--accent);padding-left:1.1rem">
+        <strong>The result:</strong> a social media presence that becomes easier to manage, more consistent to maintain and more aligned with the business you are trying to build.
       </p>
+    </div>
+  </section>
 
-      <!-- Interactive Inbound Growth Estimator -->
-      <div class="estimator-box reveal">
-        <div class="estimator-grid">
-          <div>
-            <span class="pill tone-accent">Growth Potential Estimator</span>
-            <h3 style="margin-top:0.75rem;font-size:1.35rem">Estimate Your Monthly Inbound Enquiries</h3>
-            <p style="font-size:0.88rem;color:var(--muted);margin-top:0.35rem">
-              See the direct business impact when your social channels shift from random posting to our structured authority system.
-            </p>
+  <!-- 05. NICHE FIT -->
+  <section id="niche-fit" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Tailored Relevance</span>
+        <h2 class="section-title">Built Around Your Business.</h2>
+        <p class="section-lead">Not a generic content calendar copied from another industry.</p>
+      </div>
 
-            <div style="margin-top:1.25rem">
-              <label for="calc-niche" style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem">Select Your Expertise</label>
-              <select id="calc-niche" style="width:100%;padding:0.65rem 0.85rem;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:0.92rem">
-                <option value="1.2">Coach (Business, Career, Life)</option>
-                <option value="1.1">Consultant / Advisory Specialist</option>
-                <option value="1.4">Astrologer / Occult / Spiritual Expert</option>
-                <option value="1.0">Other Personal Brand Founder</option>
-              </select>
-            </div>
-
-            <div style="margin-top:1.25rem">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">
-                <span style="font-size:0.82rem;font-weight:600;color:var(--ink)">Current Follower Size</span>
-                <span id="calc-audience-val" style="font-family:var(--font-mono);font-weight:700;color:var(--accent-bright)">5,000 followers</span>
-              </div>
-              <input type="range" id="calc-audience" min="500" max="50000" step="500" value="5000" style="width:100%;accent-color:var(--accent);cursor:pointer" />
-            </div>
-          </div>
-
-          <div class="estimator-metrics">
-            <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Projected Monthly Inbound Inquiries</div>
-            <div id="est-inquiries" style="font-family:var(--font-display);font-size:2.8rem;font-weight:800;color:var(--ink);line-height:1.1;margin-top:0.25rem">32+</div>
-            <div style="font-size:0.8rem;color:var(--good);margin-top:0.35rem">Direct DMs, strategy applications &amp; high-intent leads</div>
-
-            <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted)">
-              <span>Est. Organic Reach: <strong id="est-reach" style="color:var(--ink)">22.8k</strong></span>
-              <span>Content Frequency: <strong id="est-content" style="color:var(--accent-bright)">14-18 assets/mo</strong></span>
-            </div>
-
-            <button type="button" class="btn btn-accent btn-md open-apply-modal" style="width:100%;margin-top:1.25rem">GET MY CUSTOM STRATEGY</button>
-          </div>
+      <div class="niche-grid">
+        <div class="card card-pad card-hover reveal">
+          <span class="pill tone-accent">01</span>
+          <h3 style="margin-top:1rem;font-size:1.25rem">For Coaches</h3>
+          <p style="margin-top:0.6rem;font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Build authority, trust and a recognizable personal brand around expertise and offer.
+          </p>
         </div>
+        <div class="card card-pad card-hover reveal">
+          <span class="pill tone-good">02</span>
+          <h3 style="margin-top:1rem;font-size:1.25rem">For Consultants</h3>
+          <p style="margin-top:0.6rem;font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Communicate complex expertise clearly and create content that attracts serious prospects and business conversations.
+          </p>
+        </div>
+        <div class="card card-pad card-hover reveal">
+          <span class="pill tone-warn">03</span>
+          <h3 style="margin-top:1rem;font-size:1.25rem">For Astrologers &amp; Spiritual Experts</h3>
+          <p style="margin-top:0.6rem;font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Build credibility, educate the audience and communicate expertise with depth while creating a stronger professional presence.
+          </p>
+        </div>
+        <div class="card card-pad card-hover reveal">
+          <span class="pill tone-accent">04</span>
+          <h3 style="margin-top:1rem;font-size:1.25rem">For Personal Brands &amp; Experts</h3>
+          <p style="margin-top:0.6rem;font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Turn knowledge, opinions, experiences and expertise into consistent content without taking over your own calendar.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:2.25rem;text-align:center">
+        <button type="button" class="btn btn-accent btn-lg open-apply-modal">SEE IF WE'RE A FIT</button>
       </div>
     </div>
   </section>
 
-  <!-- 6. PROCESS -->
+  <!-- 06. PROCESS -->
   <section id="process">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Process</span>
-        <h2 class="section-title">A Simple System.<br><span class="gradient-text">Built For Busy Experts.</span></h2>
-        <p class="section-lead">A streamlined 5-step collaboration designed so you can focus on clients while we scale your brand.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Operating Model</span>
+        <h2 class="section-title">How The System Works</h2>
+        <p class="section-lead">You provide the expertise. We build the content system around it.</p>
       </div>
 
       <div class="steps" style="margin-top:var(--space-5)">
-        <div class="step reveal"><span class="ln">01</span><h3>Understand</h3><p>We learn your business, audience, expertise, offers and positioning before touching content.</p></div>
-        <div class="step reveal"><span class="ln">02</span><h3>Strategize</h3><p>We build a custom social media strategy and content direction around that.</p></div>
-        <div class="step reveal"><span class="ln">03</span><h3>Create</h3><p>Our team develops the content, creatives, scripts and captions.</p></div>
-        <div class="step reveal"><span class="ln">04</span><h3>Publish</h3><p>Content is scheduled, published and managed consistently.</p></div>
-        <div class="step reveal"><span class="ln">05</span><h3>Optimize</h3><p>We analyze performance and continuously improve the strategy.</p></div>
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.04em">Understand</h3>
+          <p style="margin-top:0.5rem;font-size:0.88rem;line-height:1.55;color:var(--text)">
+            Learn the business, audience, expertise, offers, positioning and goals.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.04em">Strategize</h3>
+          <p style="margin-top:0.5rem;font-size:0.88rem;line-height:1.55;color:var(--text)">
+            Define the content direction, messaging and strategic priorities.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.04em">Create</h3>
+          <p style="margin-top:0.5rem;font-size:0.88rem;line-height:1.55;color:var(--text)">
+            Develop concepts, scripts, creatives, captions and content.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.04em">Review &amp; Publish</h3>
+          <p style="margin-top:0.5rem;font-size:0.88rem;line-height:1.55;color:var(--text)">
+            Share content for client input and approval before publishing.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">05</div>
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.04em">Analyze &amp; Optimize</h3>
+          <p style="margin-top:0.5rem;font-size:0.88rem;line-height:1.55;color:var(--text)">
+            Study performance and use what is learned to improve the next content cycle.
+          </p>
+        </div>
       </div>
+
+      <!-- Process Line -->
+      <div class="workflow-pill-wrap reveal" style="margin-top:2.5rem">
+        <span class="wf-item">STRATEGY</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">IDEATION</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">SCRIPTING</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">PRODUCTION</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">APPROVAL</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">PUBLISHING</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">ANALYSIS</span>
+        <span class="wf-arrow">➔</span>
+        <span class="wf-item">OPTIMIZATION</span>
+      </div>
+
+      <p class="reveal" style="text-align:center;margin-top:1.5rem;font-size:1.02rem;color:var(--muted);font-weight:600">
+        You stay involved where your expertise matters. We handle the execution around it.
+      </p>
     </div>
   </section>
 
-  <!-- 7. CONTENT PILLARS -->
-  <section id="pillars">
+  <!-- 07. CONTENT MIX -->
+  <section id="content-mix" style="background:var(--bg-2)">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Content Pillars</span>
-        <h2 class="section-title">The Types Of Content<br><span class="gradient-text">That Actually Do A Job.</span></h2>
-        <p class="section-lead">Every asset in your monthly calendar serves an intentional psychological objective in the buyer's journey.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Strategic Content Mix</span>
+        <h2 class="section-title">The Content Mix</h2>
+        <p class="section-lead">Because one type of content cannot build an entire personal brand.</p>
       </div>
 
-      <div class="grid-3" style="margin-top:var(--space-5)">
-        <div class="card card-pad card-hover reveal"><span class="num-chip">01</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Authority Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Shows your expertise and builds credibility.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">02</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Educational Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Turns your knowledge into highly consumable content.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">03</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Personal Brand Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Builds familiarity and connection with your audience.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">04</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Relatable Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Creates stronger engagement by feeling human, not corporate.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">05</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Opinion / POV Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Builds a distinct voice and personality people remember.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">06</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Offer / Conversion Content</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Turns attention into enquiries and business opportunities.</p></div>
+      <div class="mix-grid">
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-accent">Pillar 01</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Authority Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Demonstrate expertise and give people a reason to trust your knowledge.
+          </p>
+        </div>
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-good">Pillar 02</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Educational Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Make valuable information easier to understand, consume and save.
+          </p>
+        </div>
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-warn">Pillar 03</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Personal Brand Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Show the person behind the expertise and create familiarity.
+          </p>
+        </div>
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-good">Pillar 04</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Relatable Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Make the brand feel human instead of corporate or distant.
+          </p>
+        </div>
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-accent">Pillar 05</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Opinion &amp; POV Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Develop a recognizable voice and give people something to remember.
+          </p>
+        </div>
+        <div class="mix-card reveal">
+          <span class="mix-badge tone-leak">Pillar 06</span>
+          <h3 style="font-size:1.15rem;margin-bottom:0.5rem">Offer &amp; Conversion Content</h3>
+          <p style="font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Create a natural bridge between attention and taking the next step.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. THE DIFFERENCE -->
+  <!-- 08. DIFFERENTIATION -->
   <section id="differentiation">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">The Difference</span>
-        <h2 class="section-title">We Don't Just Manage Your Instagram.<br><span class="gradient-text">We Build Your Digital Presence.</span></h2>
-        <p class="section-lead">The difference between hiring a post-scheduler and partnering with a client-generation growth agency.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Clear Contrast</span>
+        <h2 class="section-title">The Difference</h2>
+        <p class="section-lead" style="color:var(--ink);font-weight:700">We are not here to simply keep your Instagram active.</p>
+        <p style="margin-top:0.85rem;font-size:0.98rem;line-height:1.65;color:var(--text)">
+          A typical social media service often starts with: <em>"How many posts do you need this month?"</em> Our first question is: <strong>"What does your social media need to accomplish for your business?"</strong>
+        </p>
       </div>
 
-      <div class="fit-grid reveal" style="margin-top:var(--space-5)">
-        <div class="fit-col not-fit">
-          <h3>
-            <svg class="cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span>Typical social media manager:</span>
-          </h3>
-          <ul>
-            <li>“Here are 12 posts for this month.”</li>
-            <li>Generic templates</li>
-            <li>Random posting</li>
-            <li>Focus on quantity</li>
-            <li>Minimal strategy</li>
-          </ul>
+      <div class="diff-wrap reveal">
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th class="typical-head">A Typical Posting Service</th>
+              <th class="tal-head">The Ads Lancer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Content created around quantity</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Strategy before production</td>
+            </tr>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Generic templates</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Niche-specific positioning</td>
+            </tr>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Random topics</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Personal branding built into the system</td>
+            </tr>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Limited strategic input</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Strong creative direction</td>
+            </tr>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Focus on posting</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Content connected to business objectives</td>
+            </tr>
+            <tr>
+              <td class="typical-cell"><span class="diff-icon-bad">✕</span> Minimal performance analysis</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Performance analysis</td>
+            </tr>
+            <tr>
+              <td class="typical-cell" style="color:#cbd5e1">—</td>
+              <td class="tal-cell"><span class="diff-icon-good">✓</span> Continuous optimization</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="reveal" style="text-align:center;margin-top:1.75rem;font-size:1.02rem;color:var(--ink);font-weight:600">
+        Because the goal isn't to make your profile look busy. The goal is to make your expertise easier to understand, trust and remember.
+      </p>
+    </div>
+  </section>
+
+  <!-- 09. PRE-SALES TRUST -->
+  <section id="pre-sales-trust" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Decision Influence</span>
+        <h2 class="section-title">Your Social Media Should Work Before The Sales Call.</h2>
+        <p class="section-lead" style="line-height:1.7">
+          When someone discovers you, your profile becomes part of the decision-making process. Before a prospect ever sends you a message, they may visit your profile, watch your reels, read your captions, look at your highlights, scroll through older posts and compare you with alternatives.
+        </p>
+        <p style="margin-top:1rem;font-size:1.02rem;color:var(--accent-bright);font-weight:700">
+          Your social media can't control whether someone buys. But it can influence what they think before the conversation begins.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-badge">Clarity</div>
+          <p style="font-size:0.95rem;line-height:1.65;color:var(--text)">
+            People should understand what you do and who you help.
+          </p>
         </div>
-        <div class="fit-col strong-fit">
-          <h3>
-            <svg class="check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>The Ads Lancer:</span>
-          </h3>
-          <ul>
-            <li>Strategy-led content</li>
-            <li>Niche-specific positioning</li>
-            <li>Personal branding built in</li>
-            <li>Strong creative direction</li>
-            <li>Content designed around business objectives</li>
-            <li>Performance analysis, not guesswork</li>
-            <li>Continuous optimization</li>
-          </ul>
+        <div class="pillar-card reveal">
+          <div class="pillar-badge">Credibility</div>
+          <p style="font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Your content should demonstrate why your expertise deserves attention.
+          </p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-badge">Consistency</div>
+          <p style="font-size:0.95rem;line-height:1.65;color:var(--text)">
+            Your brand should reinforce the same positioning over time instead of changing direction every week.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 9. PROOF / SELECTED RESULTS -->
-  <section id="proof">
+  <!-- 10. CASE STUDIES -->
+  <section id="case-studies">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Proof</span>
-        <h2 class="section-title">Selected Results</h2>
-        <p class="section-lead">Real authority transformations across our core coaching and consultant categories.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Documented Proof</span>
+        <h2 class="section-title">Selected Client Results</h2>
+        <p class="section-lead">
+          Strategy matters. And the work should create measurable business impact where the business and market allow it.
+        </p>
       </div>
 
-      <div class="grid-3" style="align-items:stretch;margin-top:var(--space-5)">
+      <div class="cases-grid">
         <!-- Case Study 01 -->
-        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <span class="pill tone-accent" style="margin-bottom:1rem">Case Study 01</span>
-            <div class="proof-metric">+₹18.4L Pipeline</div>
-            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">High-ticket executive coaching client conversions</p>
+        <div class="case-card reveal">
+          <span class="pill tone-accent" style="width:fit-content">Case Study 01</span>
+          <div class="case-metric">+₹18.4L Pipeline</div>
+          <div class="case-niche">Vikramaditya Verma · Executive &amp; Leadership Coach</div>
 
-            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Client:</strong> Vikramaditya Verma — Executive &amp; Leadership Coach
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Challenge:</strong> Weak / inconsistent social presence, zero inbound inquiries despite 11k followers
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Strategy:</strong> Content + personal branding + strategic positioning around leadership frameworks
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Execution:</strong> Reels + carousels + authority content + publishing system
-              </li>
-            </ul>
+          <div class="case-block">
+            <strong>Challenge:</strong>
+            Weak and inconsistent social presence despite an existing audience of approximately 11,000 followers.
           </div>
-          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
-            <strong>Outcome:</strong> 38 high-ticket consultation applications generated in 60 days, adding ₹18.4L in signed client retainers.
+          <div class="case-block">
+            <strong>Strategy:</strong>
+            Content, personal branding and strategic positioning built around leadership frameworks.
+          </div>
+          <div class="case-block">
+            <strong>Execution:</strong>
+            Reels, carousels, authority content and structured publishing.
+          </div>
+
+          <div class="case-outcome">
+            <strong>Reported Outcome:</strong>
+            38 high-ticket consultation applications generated in 60 days, contributing to ₹18.4L in signed client retainers.
           </div>
         </div>
 
         <!-- Case Study 02 -->
-        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <span class="pill tone-good" style="margin-bottom:1rem">Case Study 02</span>
-            <div class="proof-metric">4.5x Booking Rate</div>
-            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">Session fees increased with a 3-week waiting list</p>
+        <div class="case-card reveal">
+          <span class="pill tone-good" style="width:fit-content">Case Study 02</span>
+          <div class="case-metric">₹1,500 → ₹7,500</div>
+          <div class="case-niche">Dr. Meera Nambiar · Vedic Astrology &amp; Vastu Consultant</div>
 
-            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Client:</strong> Dr. Meera Nambiar — Vedic Astrology &amp; Vastu Consultant
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Challenge:</strong> Competing on low-cost discount readings; overwhelmed with casual non-buyer inquiries
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Strategy:</strong> High-credibility educational content + premium personal branding + transit breakdown reels
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Execution:</strong> Scripted reels + planetary carousels + structured booking flow
-              </li>
-            </ul>
+          <div class="case-block">
+            <strong>Challenge:</strong>
+            Competing heavily on low-cost readings and attracting many casual enquiries.
           </div>
-          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
-            <strong>Outcome:</strong> Raised consultation pricing from ₹1,500 to ₹7,500 with zero client pushback and a 3-week waiting list.
+          <div class="case-block">
+            <strong>Strategy:</strong>
+            High-credibility educational content, premium personal branding and stronger positioning.
+          </div>
+          <div class="case-block">
+            <strong>Execution:</strong>
+            Scripted reels, planetary carousels and a structured booking flow.
+          </div>
+
+          <div class="case-outcome">
+            <strong>Reported Outcome:</strong>
+            Consultation pricing increased from ₹1,500 to ₹7,500, with a reported three-week waiting list.
           </div>
         </div>
 
         <!-- Case Study 03 -->
-        <div class="card card-pad reveal" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <span class="pill tone-warn" style="margin-bottom:1rem">Case Study 03</span>
-            <div class="proof-metric">114 Applications</div>
-            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">HNW wealth management reviews in 90 days</p>
+        <div class="case-card reveal">
+          <span class="pill tone-warn" style="width:fit-content">Case Study 03</span>
+          <div class="case-metric">114 Applications</div>
+          <div class="case-niche">Arjun Mathur · Financial &amp; Wealth Consultant</div>
 
-            <ul style="list-style:none; display:grid; gap:0.6rem; font-size:var(--fs-sm); color:var(--text); margin-top:1.25rem; padding:0;">
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Client:</strong> Arjun Mathur — Financial &amp; Wealth Consultant
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Challenge:</strong> High-level financial wisdom trapped in dry text posts with zero traction among younger HNW founders
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Strategy:</strong> Kinetic typography reels + save-worthy tax teardown carousels + lead magnet funnels
-              </li>
-              <li style="border-bottom:1px solid var(--line); padding-bottom:0.4rem;">
-                <strong>Execution:</strong> 12 multi-slide carousels + 8 macro reels + weekly LinkedIn syndication
-              </li>
-            </ul>
+          <div class="case-block">
+            <strong>Challenge:</strong>
+            Strong financial expertise communicated mainly through dry text-based content.
           </div>
-          <div style="margin-top:1.25rem;padding:0.75rem;border-radius:10px;background:var(--surface-2);border-left:3px solid var(--good);font-size:0.82rem;line-height:1.45">
-            <strong>Outcome:</strong> Over 3.2M organic impressions; 114 qualified wealth audit applications received; ₹14+ Cr pipeline added.
+          <div class="case-block">
+            <strong>Strategy:</strong>
+            Short-form creative, useful educational carousels and lead-generation content.
+          </div>
+          <div class="case-block">
+            <strong>Execution:</strong>
+            Kinetic typography reels, tax-related carousel content and lead magnet funnels.
+          </div>
+
+          <div class="case-outcome">
+            <strong>Reported Outcome:</strong>
+            3.2M+ organic impressions, 114 qualified wealth-audit applications and a reported ₹14+ Cr pipeline.
           </div>
         </div>
       </div>
+
+      <p class="reveal" style="margin-top:2rem;font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.5">
+        <em>DISCLAIMER: Results vary by business, offer, audience, market and execution. These examples are case-specific outcomes, not guarantees of future performance.</em>
+      </p>
     </div>
   </section>
 
-  <!-- 10. TESTIMONIALS -->
-  <section id="testimonials">
+  <!-- 11. TESTIMONIALS -->
+  <section id="testimonials" style="background:var(--bg-2)">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Testimonials</span>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Client Feedback</span>
         <h2 class="section-title">What Our Clients Say</h2>
-        <p class="section-lead">Direct experiences from leaders who delegated their social presence to our team.</p>
+        <p class="section-lead">The goal is to make delegation easier without making your brand feel generic.</p>
       </div>
 
-      <div class="grid-2" style="margin-top:var(--space-5)">
-        <div class="card card-pad reveal" style="border-left:4px solid var(--accent);display:flex;flex-direction:column;justify-content:space-between">
-          <blockquote style="font-size:1.15rem;line-height:1.6;color:var(--ink)">
-            “Before The Ads Lancer, our content was sporadic and depended on random graphic freelancers. Now we have an institutional-grade brand presence. In the last 60 days alone, three enterprise coaching clients reached out directly through our DMs.”
-          </blockquote>
-          <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.05em;color:var(--accent-bright)">
-            — Vikramaditya Verma, Founder, CXO Leadership Institute
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="quote-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Before The Ads Lancer, our content was sporadic and depended on random graphic freelancers. Now we have an institutional-grade brand presence. In the last 60 days alone, three enterprise coaching clients reached out directly through our DMs."
           </p>
+          <div class="client-info">
+            <div class="client-avatar">VV</div>
+            <div>
+              <div class="client-name">Vikramaditya Verma</div>
+              <div class="client-title">Founder, CXO Leadership Institute</div>
+            </div>
+          </div>
         </div>
 
-        <div class="card card-pad reveal" style="border-left:4px solid var(--good);display:flex;flex-direction:column;justify-content:space-between">
-          <blockquote style="font-size:1.15rem;line-height:1.6;color:var(--ink)">
-            “Finding a team that truly understands astrology and spiritual coaching is nearly impossible. The Ads Lancer positioned my knowledge with real dignity and depth. I tripled my consultation price and my booking calendar is completely full.”
-          </blockquote>
-          <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.05em;color:var(--good)">
-            — Dr. Meera Nambiar, Vedic Astrologer &amp; Occult Practitioner
+        <div class="testimonial-card reveal">
+          <div class="quote-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Finding a team that truly understands astrology and spiritual coaching is nearly impossible. The Ads Lancer positioned my knowledge with real dignity and depth. I tripled my consultation price and my booking calendar is completely full."
           </p>
+          <div class="client-info">
+            <div class="client-avatar">MN</div>
+            <div>
+              <div class="client-name">Dr. Meera Nambiar</div>
+              <div class="client-title">Vedic Astrologer &amp; Occult Practitioner</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 11. WHY THE ADS LANCER -->
+  <!-- 12. WHY THE ADS LANCER -->
   <section id="why-us">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Why The Ads Lancer</span>
-        <h2 class="section-title">A Growth Partner.<br><span style="color:var(--muted)">Not Just A Content Vendor.</span></h2>
-        <p class="section-lead">We look at your social channels as an asset that must generate pipeline, not an expense.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Strategic Advantage</span>
+        <h2 class="section-title">Why The Ads Lancer?</h2>
+        <p class="section-lead">Because social media management should understand the business behind the content.</p>
       </div>
 
       <div class="grid-3" style="margin-top:var(--space-5)">
-        <div class="card card-pad card-hover reveal"><span class="num-chip">01</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Niche Understanding</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">We understand expert-led businesses and personal brands.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">02</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Strategy Before Posting</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Every piece of content has a purpose.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">03</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Premium Creative Direction</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">Your social presence should match the value of your expertise.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">04</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Performance Mindset</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">We don't only look at vanity metrics.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">05</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Consistent Execution</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">A structured content system keeps your brand active.</p></div>
-        <div class="card card-pad card-hover reveal"><span class="num-chip">06</span><h3 style="margin-top:1.1rem;font-size:var(--fs-h4)">Business-Focused Thinking</h3><p style="margin-top:0.5rem;font-size:var(--fs-sm);color:var(--muted)">The objective isn't more content. It's a stronger digital presence that supports the business.</p></div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Niche Understanding</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            We work around expert-led businesses where credibility and personal brand matter.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Strategy Before Posting</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Content starts with a reason. We do not begin by asking how many posts need to go out.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Premium Creative Direction</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            The online presence should reflect the quality and positioning the business wants to command.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Performance Mindset</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            Look beyond likes and views and pay attention to the signals that help improve the content system.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Consistent Execution</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            A good strategy is useless if nothing gets published consistently.
+          </p>
+        </div>
+        <div class="card card-pad reveal">
+          <h3 style="font-size:1.15rem;color:var(--ink)">Business-Focused Thinking</h3>
+          <p style="margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:var(--text)">
+            More content is not automatically better. The objective is a stronger digital presence that supports the business behind it.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 12. WHO THIS IS FOR -->
-  <section id="fit">
+  <!-- 13. FIT / QUALIFICATION -->
+  <section id="fit" style="background:var(--bg-2)">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Who This Is For</span>
-        <h2 class="section-title">Built For Experts <span class="gradient-text">Ready To Be Taken Seriously Online.</span></h2>
-        <p class="section-lead">We maintain a selective roster so every client receives dedicated senior strategic oversight.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Qualification</span>
+        <h2 class="section-title">Is This Right For You?</h2>
+        <p class="section-lead">This is built for experts who already have something valuable to say.</p>
       </div>
 
-      <div class="fit-grid reveal" style="margin-top:var(--space-5)">
-        <div class="fit-col strong-fit">
-          <h3>
-            <svg class="check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>This is for you if:</span>
+      <div class="fit-grid">
+        <!-- This is for you if -->
+        <div class="fit-col strong-fit reveal">
+          <h3 style="color:var(--good)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            This is for you if
           </h3>
           <ul>
-            <li>You are a coach, consultant, astrologer or expert.</li>
-            <li>You want to build a premium personal brand.</li>
-            <li>You know your expertise but struggle with content consistency.</li>
-            <li>You want professional content without managing the entire process yourself.</li>
-            <li>You want your social media to support business growth.</li>
-            <li>You are serious about building long-term authority.</li>
+            <li><span class="check">✓</span> You are a coach, consultant, astrologer or expert.</li>
+            <li><span class="check">✓</span> You want to build a serious personal brand.</li>
+            <li><span class="check">✓</span> You know your expertise but do not want to manage content every day.</li>
+            <li><span class="check">✓</span> Your current content feels inconsistent, random or disconnected.</li>
+            <li><span class="check">✓</span> You want professional content without coordinating multiple freelancers.</li>
+            <li><span class="check">✓</span> You want your social presence to support broader business goals.</li>
+            <li><span class="check">✓</span> You are willing to participate where your personal expertise is essential.</li>
+            <li><span class="check">✓</span> You are thinking beyond short-term vanity metrics.</li>
           </ul>
         </div>
-        <div class="fit-col not-fit">
-          <h3>
-            <svg class="cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span>This may not be for you if:</span>
+
+        <!-- This may not be for you if -->
+        <div class="fit-col not-fit reveal">
+          <h3 style="color:var(--leak)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            This may not be for you if
           </h3>
           <ul>
-            <li>You only want cheap posting packages.</li>
-            <li>You want guaranteed followers.</li>
-            <li>You are looking for instant overnight growth.</li>
-            <li>You don't want to participate in the content process at all.</li>
+            <li><span class="cross">✕</span> You only want the cheapest posting package.</li>
+            <li><span class="cross">✕</span> You want guaranteed followers, leads or revenue.</li>
+            <li><span class="cross">✕</span> You expect overnight growth.</li>
+            <li><span class="cross">✕</span> You do not want to provide any input about your business or expertise.</li>
+            <li><span class="cross">✕</span> You only want someone to upload pre-made posts without strategy.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 13. FAQ -->
+  <!-- 14. FAQS -->
   <section id="faq">
     <div class="container">
-      <div class="reveal">
-        <span class="eyebrow">Questions</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-lead">Clear answers to everything you need to know before applying.</p>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Practical Answers</span>
+        <h2 class="section-title">Before You Apply</h2>
+        <p class="section-lead">A few honest answers to common questions.</p>
       </div>
 
-      <div class="faq reveal" style="margin-top:var(--space-4)">
+      <div class="faq-list reveal" style="margin-top:var(--space-5)">
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            What exactly is included in social media management?
+            What exactly is included?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Everything from strategy and content planning to creative production, copywriting, publishing and performance analysis — the full breakdown is in the Services section above. The exact scope for your brand is confirmed on the strategy call.</p></div>
+          <div class="faq-a">
+            <p>Our social media management covers strategy, content planning, content creation, copywriting, publishing and performance analysis. The exact scope is finalized based on your brand, requirements and strategy.</p>
+          </div>
         </div>
 
         <div class="faq-item">
@@ -754,47 +993,59 @@
             Which platforms do you manage?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Primarily Instagram, since that's where most coaches, consultants and experts build authority. We can extend to LinkedIn or other platforms depending on where your audience actually is.</p></div>
+          <div class="faq-a">
+            <p>Instagram is a primary focus for most expert-led personal brands. Depending on your audience and business model, we can also explore LinkedIn and other relevant platforms.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            Do you also create reels?
+            Do you create reels?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Yes. Reels, carousels, static posts and stories are all part of the content system, planned around your strategy rather than created randomly.</p></div>
+          <div class="faq-a">
+            <p>Yes. Reels, carousels, static posts and stories can all be incorporated into the content system based on what makes strategic sense for the brand.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            Do I need to provide videos/content?
+            Do I need to provide videos?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Some raw material helps — talking-head clips, photos, or your expertise on a call or in writing — but our team handles the scripting, editing and turning it into finished content.</p></div>
+          <div class="faq-a">
+            <p>Some raw material is useful because nobody can replace your personal expertise. You may provide talking-head clips, photos, ideas, voice notes or knowledge from which our team can build content. We handle the scripting, editing, design and execution around that input.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            How much involvement is required from me?
+            How much time will I need to give the team?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Enough to keep the content authentic — mainly your input during strategy and approval. We handle the day-to-day production and publishing.</p></div>
+          <div class="faq-a">
+            <p>Your involvement is primarily around strategy, expertise and approvals. The goal is to remove the day-to-day content workload from your calendar.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            How does the approval process work?
+            How does approval work?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Content is planned and shared with you ahead of publishing so you can review and approve it before anything goes live.</p></div>
+          <div class="faq-a">
+            <p>Content is planned and shared with you before publishing so you have the opportunity to review and approve it.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            Can you manage my personal brand?
+            Can you build my personal brand?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>Yes — personal branding is core to what we do, not an add-on. Positioning, tone and visual identity are built around you specifically.</p></div>
+          <div class="faq-a">
+            <p>Yes. Personal branding is part of the core strategy, including positioning, communication style, tone and visual identity.</p>
+          </div>
         </div>
 
         <div class="faq-item">
@@ -802,24 +1053,28 @@
             Do you work specifically with coaches and consultants?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>We specialize in coaches, consultants, astrologers and other personal-brand-led experts — businesses where the person is the brand.</p></div>
+          <div class="faq-a">
+            <p>Yes. The service is designed primarily for expert-led businesses where the individual is an important part of the brand.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">
-            Do you also help with content strategy?
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-          <div class="faq-a"><p>Yes — every engagement starts with strategy. Content without a strategy behind it is just noise.</p></div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">
-            How long does it take to see improvements?
+            Do you provide content strategy?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div class="faq-a">
-            <p>Most clients see a noticeable shift in engagement quality and inbound conversation within the first 4–6 weeks of consistent posting. By days 60–90, compounding reach and authority positioning turn into predictable client enquiries.</p>
+            <p>Yes. Every engagement begins with strategy because content without direction can easily become noise.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">
+            How long does it take to see improvement?
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>There is no universal timeline because every account, audience, offer and market is different. The objective of the first phase is to establish the right positioning, content system, consistency and feedback loop.</p>
           </div>
         </div>
 
@@ -828,189 +1083,240 @@
             Do you guarantee followers or leads?
             <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a"><p>No. We don't promise a fixed number of followers, leads or revenue. We focus on building a strategic, consistent presence that creates the conditions for more enquiries.</p></div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">
-            How do we get started?
-            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-          <div class="faq-a"><p>Apply through the form above. If it looks like a fit, we'll book a strategy call to walk through your positioning and content plan.</p></div>
+          <div class="faq-a">
+            <p>No. We do not promise a fixed number of followers, enquiries or revenue. We build the strategy, content system and execution required to create stronger conditions for audience growth, trust and business conversations.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 14. LEAD GENERATION SECTION -->
-  <section id="lead-gen">
+  <!-- 15. APPLICATION PROCESS -->
+  <section id="application-process" style="background:var(--bg-2)">
     <div class="container">
-      <div class="cta-band reveal">
-        <span class="eyebrow">READY TO GROW?</span>
-        <h2 style="margin-top:1.1rem;line-height:1.15">Ready To Build A Social Media Presence That Matches Your Expertise?</h2>
-        <p style="margin-top:1.1rem;max-width:38rem;color:var(--text);font-size:1.05rem">
-          Let's build a strategic, premium and consistent digital presence around your expertise.
-        </p>
-        <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.9rem">
-          <button type="button" class="btn btn-accent btn-xl open-apply-modal">BOOK A STRATEGY CALL</button>
-          <button type="button" class="btn btn-ghost btn-xl open-apply-modal">GET MY SOCIAL MEDIA AUDIT</button>
+      <div class="reveal" style="max-width:44rem">
+        <span class="eyebrow">Clear Steps</span>
+        <h2 class="section-title">What Happens After You Apply?</h2>
+        <p class="section-lead">No complicated process.</p>
+      </div>
+
+      <div class="app-steps-grid">
+        <div class="app-step-card reveal">
+          <span class="app-step-num">STEP 1</span>
+          <div class="app-step-title">You submit the application.</div>
+          <div class="app-step-desc">Tell us about your business, niche, current social presence and what you are struggling with.</div>
         </div>
-        <p style="margin-top:1.25rem;font-size:0.82rem;color:var(--muted);">
-          For coaches, consultants, astrologers and experts with real expertise to build on.
-        </p>
+        <div class="app-step-card reveal">
+          <span class="app-step-num">STEP 2</span>
+          <div class="app-step-title">We review the information.</div>
+          <div class="app-step-desc">We look at whether our approach makes sense for your current stage and business.</div>
+        </div>
+        <div class="app-step-card reveal">
+          <span class="app-step-num">STEP 3</span>
+          <div class="app-step-title">We discuss your brand &amp; goals.</div>
+          <div class="app-step-desc">On the strategy call, we understand your positioning, audience, content challenges and business objectives.</div>
+        </div>
+        <div class="app-step-card reveal">
+          <span class="app-step-num">STEP 4</span>
+          <div class="app-step-title">We define the right approach.</div>
+          <div class="app-step-desc">If there is a fit, we outline how the social media system can be structured around your brand.</div>
+        </div>
+        <div class="app-step-card reveal">
+          <span class="app-step-num">STEP 5</span>
+          <div class="app-step-title">You decide.</div>
+          <div class="app-step-desc">No pressure to force a fit. The goal is to determine whether the partnership makes sense for both sides.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 15. FINAL CTA -->
+  <!-- 16. FINAL CTA -->
   <section id="final-cta">
-    <div class="container" style="text-align:center;max-width:44rem;margin-inline:auto">
+    <div class="container" style="text-align:center;max-width:46rem;margin-inline:auto">
       <div class="reveal">
-        <h2 class="section-title" style="max-width:none">Your Expertise Is The Product.<br><span class="gradient-text">Your Social Media Is The Proof.</span></h2>
-        <p class="lead" style="margin:1.25rem auto 0;max-width:34rem">
-          Let The Ads Lancer build a digital presence that communicates your value before the first conversation.
+        <h2 class="section-title" style="max-width:none">Your Expertise Is The Product.<br><span class="gradient-text">Your Social Media Should Help People See Why It Matters.</span></h2>
+        
+        <p class="lead" style="margin:1.35rem auto 0;max-width:38rem;line-height:1.7">
+          You have already spent years building your knowledge. You shouldn't have to spend every week figuring out what to post, how to turn an idea into a reel, why your profile feels inconsistent, or why people are watching but not enquiring. That's the execution problem we solve.
         </p>
-        <div style="margin-top:2rem"><button type="button" class="btn btn-accent btn-xl open-apply-modal">BOOK A STRATEGY CALL</button></div>
+
+        <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.9rem;font-weight:700;color:var(--accent-bright);letter-spacing:0.04em">
+          Strategy. Positioning. Content. Creative. Publishing. Analysis. Optimization.
+        </p>
+
+        <p style="margin-top:0.4rem;font-size:1.02rem;color:var(--ink);font-weight:700">
+          One team. One system. One consistent direction.
+        </p>
+
+        <div style="margin-top:2rem">
+          <button type="button" class="btn btn-accent btn-xl open-apply-modal">APPLY FOR A STRATEGY CALL</button>
+        </div>
+
+        <p style="margin-top:1.15rem;font-size:0.85rem;color:var(--muted)">
+          Tell us about your brand ➔ We'll review it ➔ We'll discuss the right social media approach
+        </p>
       </div>
     </div>
   </section>
 </main>
 
-<!-- 16. FOOTER -->
+<!-- 17. FOOTER -->
 <footer>
   <div class="container foot-flex" style="flex-wrap:wrap;gap:1.5rem;align-items:flex-start">
     <div>
       <a href="#top" class="brand-logo"><span class="logo-accent">THE ADS</span> LANCER</a>
       <p style="margin-top:0.4rem;font-size:0.88rem;color:var(--muted)">Performance Marketing &amp; Personal Brand Growth</p>
     </div>
-    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:1.5rem;font-size:var(--fs-sm)">
-      <a href="#services" class="nav-link">Services</a>
+    <nav aria-label="Footer Navigation" style="display:flex;flex-wrap:wrap;gap:1.4rem;font-size:var(--fs-sm)">
+      <a href="#what-we-manage" class="nav-link">Services</a>
       <a href="#why-us" class="nav-link">About</a>
-      <a href="#proof" class="nav-link">Case Studies</a>
+      <a href="#case-studies" class="nav-link">Case Studies</a>
       <a href="#faq" class="nav-link">FAQs</a>
-      <a href="#lead-gen" class="nav-link">Contact</a>
+      <a href="#final-cta" class="nav-link">Contact</a>
+      <a href="#faq" class="nav-link">Privacy Policy</a>
+      <a href="#faq" class="nav-link">Terms &amp; Conditions</a>
     </nav>
   </div>
   <div class="container" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:var(--fs-caption);color:var(--muted)">
-    <p>© 2026 The Ads Lancer. Performance Marketing &amp; Personal Brand Growth.</p>
-    <div style="display:flex;gap:1.25rem">
-      <a href="#faq" class="nav-link">Privacy Policy</a>
-      <a href="#faq" class="nav-link">Terms &amp; Conditions</a>
-    </div>
+    <p>© 2026 The Ads Lancer. All rights reserved.</p>
+    <p style="font-weight:600;color:var(--ink)">Your expertise is the product. Your social media is the proof.</p>
   </div>
 </footer>
 
-<!-- 17. STICKY MOBILE CTA BAR -->
+<!-- STICKY MOBILE CTA BAR -->
 <div id="sticky-cta-bar" class="sticky-cta">
   <div class="container sticky-cta-flex">
     <p class="sticky-cta-text">Build a social media presence that matches your expertise.</p>
-    <button type="button" class="btn btn-accent btn-md open-apply-modal">GET MY SOCIAL MEDIA STRATEGY</button>
+    <button type="button" class="btn btn-accent btn-md open-apply-modal">APPLY FOR A STRATEGY CALL</button>
   </div>
 </div>
 
-<!-- 18. APPLICATION FORM MODAL DIALOG -->
+<!-- APPLICATION FORM MODAL DIALOG (10 Qualification Fields) -->
 <dialog id="apply-modal" aria-labelledby="modal-title">
-  <div class="modal-inner">
+  <div class="modal-box">
     <div id="modal-form-content">
-      <div class="modal-top">
+      <div class="modal-header">
         <div>
-          <span class="pill tone-accent">Social Media Strategy Application</span>
-          <h3 id="modal-title" style="margin-top:0.85rem;font-size:1.4rem">Apply for Social Media Management</h3>
-          <p style="margin-top:0.5rem;font-size:0.86rem;color:var(--muted)">Answer a few quick questions so we can prepare your strategy call.</p>
+          <span class="pill tone-accent" style="font-size:0.75rem">Strategy Call Application</span>
+          <h3 id="modal-title" style="margin-top:0.5rem;font-size:1.35rem">Apply for a Strategy Call</h3>
+          <p style="margin-top:0.35rem;font-size:0.86rem;color:var(--muted)">
+            Tell us about your brand so we can review your current presence and discuss the right approach.
+          </p>
         </div>
-        <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close dialog">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close modal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
 
-      <form id="audit-form" style="margin-top:1.25rem">
-        <div class="grid-fields">
-          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" required placeholder="Full name" /></div>
-          <div class="field">
-            <label for="f-whatsapp">WhatsApp number</label>
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
-              <select id="f-country-code" name="country_code" style="width: 7.2rem; flex-shrink: 0;" required>
+      <form id="application-form">
+        <!-- Field 1 & 2: Name & Email -->
+        <div class="field-grid-2">
+          <div class="form-field">
+            <label for="f-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" required placeholder="e.g. Vikramaditya Verma" autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" required placeholder="you@brand.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <!-- Field 3 & 4: WhatsApp & Social Profile -->
+        <div class="field-grid-2">
+          <div class="form-field">
+            <label for="f-whatsapp">Phone / WhatsApp <span class="req">*</span></label>
+            <div class="tel-row">
+              <select class="tel-code" name="country_code" aria-label="Country Code">
                 <option value="+91" selected>+91 (IN)</option>
                 <option value="+1">+1 (US)</option>
                 <option value="+44">+44 (UK)</option>
                 <option value="+971">+971 (AE)</option>
                 <option value="+61">+61 (AU)</option>
                 <option value="+65">+65 (SG)</option>
-                <option value="+92">+92 (PK)</option>
-                <option value="+880">+880 (BD)</option>
-                <option value="+977">+977 (NP)</option>
-                <option value="+94">+94 (LK)</option>
+                <option value="+1">+1 (CA)</option>
+                <option value="+49">+49 (DE)</option>
               </select>
-              <input id="f-whatsapp" name="whatsapp" required placeholder="WhatsApp number" style="flex: 1;" />
+              <input type="tel" id="f-whatsapp" name="whatsapp" required placeholder="Phone / WhatsApp" style="flex:1;" />
             </div>
           </div>
+          <div class="form-field">
+            <label for="f-instagram">Instagram / Social Profile URL <span class="req">*</span></label>
+            <input type="text" id="f-instagram" name="instagram" required placeholder="https://instagram.com/yourhandle or @handle" />
+          </div>
         </div>
 
-        <div class="grid-fields">
-          <div class="field"><label for="f-email">Email address</label><input id="f-email" name="email" type="email" required placeholder="you@brand.com" /></div>
-          <div class="field">
-            <label for="f-profession">Profession / niche</label>
+        <!-- Field 5 & 6: Profession & Selling -->
+        <div class="field-grid-2">
+          <div class="form-field">
+            <label for="f-profession">Business / Profession <span class="req">*</span></label>
             <select id="f-profession" name="profession" required>
               <option value="" disabled selected>Select your profession...</option>
-              <option value="Coach">Coach</option>
-              <option value="Business Coach">Business Coach</option>
-              <option value="Life Coach">Life Coach</option>
-              <option value="Career Coach">Career Coach</option>
-              <option value="Consultant">Consultant</option>
-              <option value="Financial / Investment Consultant">Financial / Investment Consultant</option>
-              <option value="Astrologer">Astrologer</option>
-              <option value="Tarot Reader">Tarot Reader</option>
-              <option value="Numerologist">Numerologist</option>
-              <option value="Spiritual Coach">Spiritual Coach</option>
-              <option value="Occult Practitioner">Occult Practitioner</option>
-              <option value="Other">Other personal-brand expert</option>
+              <option value="Coach">Coach (Leadership, Business, Life, Career)</option>
+              <option value="Consultant">Consultant (Finance, Strategy, B2B)</option>
+              <option value="Astrologer / Spiritual Expert">Astrologer / Spiritual Expert / Occult</option>
+              <option value="Personal Brand / SME">Personal Brand / Subject-Matter Expert</option>
+              <option value="Other">Other Expert-Led Business</option>
             </select>
+          </div>
+          <div class="form-field">
+            <label for="f-selling">What do you currently sell? <span class="req">*</span></label>
+            <input type="text" id="f-selling" name="selling" required placeholder="e.g. 1:1 Executive Coaching, Consultation Readings" />
           </div>
         </div>
 
-        <div class="grid-fields">
-          <div class="field"><label for="f-instagram">Instagram handle</label><input id="f-instagram" name="instagram" required placeholder="@yourhandle" /></div>
-          <div class="field">
-            <label for="f-help">What do you need help with?</label>
-            <select id="f-help" name="help_needed" required>
-              <option value="" disabled selected>Select an option...</option>
-              <option value="Content Strategy">Content strategy</option>
-              <option value="Content Creation">Content creation (reels/posts)</option>
-              <option value="Personal Branding">Personal branding</option>
-              <option value="Consistency & Posting">Consistency &amp; posting</option>
-              <option value="Full Social Media Management">Full social media management</option>
-              <option value="Not Sure Yet">Not sure yet</option>
+        <!-- Field 7 & 10: Revenue Range & Monthly Marketing Budget (Optional) -->
+        <div class="field-grid-2">
+          <div class="form-field">
+            <label for="f-revenue">Current Monthly Revenue <span class="opt">(Optional)</span></label>
+            <select id="f-revenue" name="revenue">
+              <option value="" selected>Select revenue range (optional)...</option>
+              <option value="Pre-revenue / Getting started">Pre-revenue / Getting started</option>
+              <option value="Under ₹1,00,000 / month">Under ₹1,00,000 / month</option>
+              <option value="₹1,00,000 – ₹3,00,000 / month">₹1,00,000 – ₹3,00,000 / month</option>
+              <option value="₹3,00,000 – ₹10,00,000 / month">₹3,00,000 – ₹10,00,000 / month</option>
+              <option value="₹10,00,000+ / month">₹10,00,000+ / month</option>
             </select>
           </div>
-        </div>
-
-        <div class="grid-fields">
-          <div class="field">
-            <label for="f-budget">Approximate monthly marketing budget</label>
-            <select id="f-budget" name="budget" required>
-              <option value="" disabled selected>Select a range...</option>
+          <div class="form-field">
+            <label for="f-budget">Approximate Monthly Marketing Budget <span class="opt">(Optional)</span></label>
+            <select id="f-budget" name="budget">
+              <option value="" selected>Select budget range (optional)...</option>
               <option value="Under ₹25,000">Under ₹25,000</option>
               <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
               <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
               <option value="₹1,00,000+">₹1,00,000+</option>
-              <option value="Prefer not to say">Prefer not to say</option>
+              <option value="Flexible / Depends on ROI">Flexible / Depends on ROI</option>
             </select>
           </div>
-          <div class="field"><label for="f-challenge">Current social media challenge</label><input id="f-challenge" name="challenge" required placeholder="e.g. Inconsistent posting, no strategy" /></div>
         </div>
 
-        <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:1.5rem">APPLY FOR SOCIAL MEDIA MANAGEMENT</button>
-        <p style="margin-top:0.85rem;font-size:0.75rem;color:var(--muted);text-align:center">Your information is used only to prepare your strategy call — never shared or sold.</p>
+        <!-- Field 8: Biggest Social Media Challenge -->
+        <div class="form-field">
+          <label for="f-challenge">What is your biggest social media challenge? <span class="req">*</span></label>
+          <input type="text" id="f-challenge" name="challenge" required placeholder="e.g. Inconsistent posting, views but no qualified enquiries, lack of time" />
+        </div>
+
+        <!-- Field 9: Desired Business Outcome -->
+        <div class="form-field">
+          <label for="f-goal">What do you want social media to help you achieve? <span class="req">*</span></label>
+          <input type="text" id="f-goal" name="goal" required placeholder="e.g. Build authority, attract high-ticket clients, consistent inbound inquiries" />
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:0.75rem">APPLY FOR A STRATEGY CALL</button>
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);text-align:center">
+          We respect your privacy. Information provided is used solely to evaluate your profile before the strategy call.
+        </p>
       </form>
     </div>
 
-    <div id="modal-success-content" style="display:none;text-align:center;padding:1.5rem 0.5rem">
-      <div class="success-ring" style="margin-inline:auto">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <!-- Form Confirmation / Next Step View -->
+    <div id="modal-success-content" style="display:none;" class="success-box">
+      <div class="success-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h3 style="font-size:1.35rem;margin-top:1rem">Application received</h3>
-      <p style="margin-top:0.6rem;font-size:0.9rem;color:var(--muted);max-width:24rem;margin-inline:auto">
-        We'll review your profile and get back to you if this is a strong fit for a strategy call.
+      <h3 style="font-size:1.4rem;color:var(--ink)">Application Received</h3>
+      <p style="margin:0.85rem auto 0;font-size:0.98rem;line-height:1.6;color:var(--text);max-width:26rem">
+        Thanks — your application has been received. We'll review your brand and contact you regarding the strategy call.
       </p>
       <button type="button" class="btn btn-ghost btn-md" style="margin-top:1.5rem" onclick="document.getElementById('apply-modal').close()">Close</button>
     </div>
