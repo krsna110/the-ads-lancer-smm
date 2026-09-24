@@ -49,53 +49,122 @@
         70%      { transform: translate(3%,5%) scale(0.95); }
       }
 
-      /* IG Followers Growth Graph widget */
-      .ig-graph-card {
-        background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(248,250,252,0.90));
-        border: 1px solid rgba(79,70,229,0.18);
-        border-radius: var(--radius);
-        box-shadow: 0 16px 40px -12px rgba(79,70,229,0.14), 0 0 0 1px rgba(255,255,255,0.8);
-        backdrop-filter: blur(14px);
-        padding: 1rem 1.1rem 0.85rem;
-        margin-top: 0.85rem;
+      /* ── Performance Dashboard (replaces Followers Growth card) ── */
+      .perf-section {
+        margin-top: 0.9rem;
         opacity: 0;
-        transform: translateY(18px);
-        animation: graph-card-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.9s forwards;
+        transform: translateY(16px);
+        animation: perf-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.85s forwards;
       }
-      @keyframes graph-card-in {
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes perf-in { to { opacity: 1; transform: translateY(0); } }
+
+      .perf-divider {
+        display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;
       }
-      .ig-graph-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 0.6rem;
+      .perf-divider-line { flex: 1; height: 1px; background: var(--line-strong); }
+      .perf-divider-label {
+        font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+        letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+        white-space: nowrap;
       }
-      .ig-graph-label { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-      .ig-graph-stat {
-        font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1;
-        background: linear-gradient(90deg, var(--ink) 0%, #4f46e5 50%, var(--ink) 100%);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: stat-shimmer 3s linear infinite 1.6s;
+
+      .perf-metrics {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.85rem;
       }
-      @keyframes stat-shimmer {
-        from { background-position: 200% center; }
-        to   { background-position: -200% center; }
+      .perf-metric {
+        background: linear-gradient(145deg, #ffffff, #f8fafc);
+        border: 1px solid var(--line-strong); border-radius: 14px;
+        padding: 0.85rem 0.9rem;
+        text-align: center;
+        transition: box-shadow 0.25s ease, border-color 0.25s ease;
       }
-      .ig-graph-delta { font-size: 0.72rem; font-weight: 700; color: #16a34a; margin-top: 0.15rem; }
-      .ig-graph-months { display: flex; justify-content: space-between; margin-top: 0.35rem; padding: 0 2px; }
-      .ig-graph-months span { font-size: 0.62rem; color: var(--muted); font-family: var(--font-mono); }
-      /* SVG line draw animation */
-      #ig-growth-line { transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1); }
-      #ig-growth-area { transition: opacity 0.8s ease; }
-      /* live dot pulse */
-      .ig-dot-pulse { animation: dot-pulse 2s ease-in-out infinite; }
-      @keyframes dot-pulse {
+      .perf-metric:hover {
+        border-color: rgba(79,70,229,0.32);
+        box-shadow: 0 6px 24px -8px rgba(79,70,229,0.18);
+      }
+      .perf-metric-num {
+        font-family: var(--font-display); font-size: 1.65rem; font-weight: 800;
+        line-height: 1; letter-spacing: -0.03em;
+        background: linear-gradient(120deg, var(--accent-bright), var(--cyan));
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .perf-metric-label {
+        font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+        margin-top: 0.3rem; line-height: 1.4;
+      }
+
+      /* SVG graph */
+      .perf-graph-wrap {
+        border-radius: 12px; overflow: hidden; border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(79,70,229,0.04) 0%, rgba(8,145,178,0.02) 100%);
+        padding: 0.5rem 0.5rem 0;
+      }
+      #pg-growth-line { transition: stroke-dashoffset 1.6s cubic-bezier(0.4,0,0.2,1); }
+      #pg-growth-area { transition: opacity 1s ease 0.5s; }
+      #pg-graph-dot { transition: opacity 0.3s ease 1.4s; }
+      .pg-dot-pulse { animation: pg-dot-pulse 2.4s ease-in-out infinite; }
+      @keyframes pg-dot-pulse {
         0%,100% { filter: drop-shadow(0 0 0px #4f46e5); }
-        50%      { filter: drop-shadow(0 0 6px rgba(79,70,229,0.8)); }
+        50%      { filter: drop-shadow(0 0 5px rgba(79,70,229,0.75)); }
+      }
+
+      /* indicator row */
+      .perf-indicator {
+        display: flex; align-items: center; gap: 0.45rem;
+        margin-top: 0.55rem; margin-bottom: 0.1rem;
+        font-family: var(--font-mono); font-size: 0.62rem; font-weight: 600; color: var(--muted);
+      }
+      .perf-indicator-dot {
+        width: 0.45rem; height: 0.45rem; border-radius: 999px;
+        background: var(--good); flex-shrink: 0;
+        animation: ind-pulse 2.6s ease-in-out infinite;
+      }
+      @keyframes ind-pulse {
+        0%,100% { box-shadow: 0 0 0 0 rgba(5,150,105,0.5); }
+        50%      { box-shadow: 0 0 0 4px rgba(5,150,105,0); }
+      }
+
+      /* expertise flow footer */
+      .expertise-flow {
+        margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid var(--line);
+        position: relative; overflow: hidden;
+      }
+      .expertise-flow-label {
+        font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+        letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+        margin-bottom: 0.45rem;
+      }
+      .expertise-flow-steps {
+        display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap;
+      }
+      .ef-step {
+        font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+        padding: 0.2rem 0.5rem; border-radius: 6px; background: var(--surface);
+        border: 1px solid var(--line);
+        white-space: nowrap;
+      }
+      .ef-arrow { color: var(--accent-bright); font-size: 0.7rem; font-weight: 700; }
+      /* travelling glow dot on the flow */
+      .ef-glow {
+        position: absolute; bottom: 0; left: -12px;
+        width: 12px; height: 2px; border-radius: 999px;
+        background: var(--accent);
+        filter: blur(2px);
+        animation: ef-travel 4s linear infinite;
+      }
+      @keyframes ef-travel {
+        from { left: -12px; opacity: 0.9; }
+        80%  { opacity: 0.9; }
+        to   { left: 100%; opacity: 0; }
+      }
+
+      /* reduced-motion: skip all hero animations, show final states */
+      @media (prefers-reduced-motion: reduce) {
+        .perf-section, .ig-preview-box { opacity: 1 !important; transform: none !important; animation: none !important; }
+        #pg-growth-line, #pg-growth-area, #pg-graph-dot { transition: none !important; }
+        .perf-indicator-dot, .pg-dot-pulse, .ef-glow { animation: none !important; }
       }
       /* Component layout refinements */
       .ig-preview-box {
@@ -334,43 +403,73 @@
             </div>
           </div>
 
-          <div class="console-note" style="margin-top:1.15rem;font-size:0.8rem;line-height:1.5">
-            <strong>The Underlying Mechanism:</strong><br>
-            Expertise → Strategy → Content → Authority → Trust → Business Conversations
+          <!-- Expertise Flow Footer -->
+          <div class="expertise-flow">
+            <div class="expertise-flow-label">The Expertise Engine</div>
+            <div class="expertise-flow-steps">
+              <span class="ef-step">Expertise</span>
+              <span class="ef-arrow">→</span>
+              <span class="ef-step">Strategy</span>
+              <span class="ef-arrow">→</span>
+              <span class="ef-step">Content</span>
+              <span class="ef-arrow">→</span>
+              <span class="ef-step">Authority</span>
+              <span class="ef-arrow">→</span>
+              <span class="ef-step">Trust</span>
+              <span class="ef-arrow">→</span>
+              <span class="ef-step">Demand</span>
+            </div>
+            <div class="ef-glow" aria-hidden="true"></div>
           </div>
         </div>
 
-        <!-- IG Growth Graph — inside right column so it sits below the IG card -->
-        <div class="ig-graph-card" style="max-width:28.5rem;margin-inline:auto;">
-          <div class="ig-graph-header">
-            <div>
-              <div class="ig-graph-label">Followers Growth</div>
-              <div class="ig-graph-stat">12.4K</div>
-              <div class="ig-graph-delta">&#x2191; +3,200 this month</div>
+        <!-- Performance Dashboard (replaces Followers Growth card) -->
+        <div class="perf-section" id="perf-section" style="max-width:28.5rem;margin-inline:auto;">
+
+          <div class="perf-divider">
+            <div class="perf-divider-line"></div>
+            <div class="perf-divider-label">Content Performance</div>
+            <div class="perf-divider-line"></div>
+          </div>
+
+          <div class="perf-metrics">
+            <div class="perf-metric">
+              <div class="perf-metric-num" id="perf-views" aria-label="500K+ views generated">500K+</div>
+              <div class="perf-metric-label">Views Generated</div>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.2" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="perf-metric">
+              <div class="perf-metric-num" id="perf-followers" aria-label="100K+ followers generated">100K+</div>
+              <div class="perf-metric-label">Followers Generated</div>
+            </div>
           </div>
-          <svg id="ig-graph-svg" viewBox="0 0 300 80" preserveAspectRatio="none" width="100%" height="80" aria-hidden="true">
-            <defs>
-              <linearGradient id="ig-fill-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"  stop-color="#4f46e5" stop-opacity="0.28"/>
-                <stop offset="100%" stop-color="#4f46e5" stop-opacity="0"/>
-              </linearGradient>
-              <linearGradient id="ig-line-grad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%"  stop-color="#4f46e5"/>
-                <stop offset="100%" stop-color="#0891b2"/>
-              </linearGradient>
-            </defs>
-            <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(79,70,229,0.08)" stroke-width="1"/>
-            <line x1="0" y1="40" x2="300" y2="40" stroke="rgba(79,70,229,0.08)" stroke-width="1"/>
-            <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(79,70,229,0.08)" stroke-width="1"/>
-            <path id="ig-growth-area" fill="url(#ig-fill-grad)" opacity="0"/>
-            <path id="ig-growth-line" fill="none" stroke="url(#ig-line-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle id="ig-graph-dot" r="4" fill="#4f46e5" opacity="0" class="ig-dot-pulse"/>
-          </svg>
-          <div class="ig-graph-months">
-            <span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+
+          <div class="perf-graph-wrap">
+            <svg id="pg-graph-svg" viewBox="0 0 300 72" preserveAspectRatio="none" width="100%" height="72" aria-hidden="true">
+              <defs>
+                <linearGradient id="pg-fill-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#0891b2" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="pg-line-grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#4f46e5"/>
+                  <stop offset="60%" stop-color="#7c3aed"/>
+                  <stop offset="100%" stop-color="#0891b2"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="18" x2="300" y2="18" stroke="rgba(79,70,229,0.07)" stroke-width="1"/>
+              <line x1="0" y1="36" x2="300" y2="36" stroke="rgba(79,70,229,0.07)" stroke-width="1"/>
+              <line x1="0" y1="54" x2="300" y2="54" stroke="rgba(79,70,229,0.07)" stroke-width="1"/>
+              <path id="pg-growth-area" fill="url(#pg-fill-grad)" opacity="0"/>
+              <path id="pg-growth-line" fill="none" stroke="url(#pg-line-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle id="pg-graph-dot" r="3.5" fill="#4f46e5" opacity="0" class="pg-dot-pulse"/>
+            </svg>
           </div>
+
+          <div class="perf-indicator">
+            <div class="perf-indicator-dot"></div>
+            <span>Growing authority &amp; reach</span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1329,102 +1428,46 @@
       </div>
 
       <form id="application-form">
-        <!-- Field 1 & 2: Name & Email -->
-        <div class="field-grid-2">
-          <div class="form-field">
-            <label for="f-name">Full Name <span class="req">*</span></label>
-            <input type="text" id="f-name" name="name" required placeholder="e.g. Vikramaditya Verma" autocomplete="name" />
-          </div>
-          <div class="form-field">
-            <label for="f-email">Email Address <span class="req">*</span></label>
-            <input type="email" id="f-email" name="email" required placeholder="you@brand.com" autocomplete="email" />
-          </div>
-        </div>
 
-        <!-- Field 3 & 4: WhatsApp & Social Profile -->
-        <div class="field-grid-2">
-          <div class="form-field">
-            <label for="f-whatsapp">Phone / WhatsApp <span class="req">*</span></label>
-            <div class="tel-row">
-              <select class="tel-code" name="country_code" aria-label="Country Code">
-                <option value="+91" selected>+91 (IN)</option>
-                <option value="+1">+1 (US)</option>
-                <option value="+44">+44 (UK)</option>
-                <option value="+971">+971 (AE)</option>
-                <option value="+61">+61 (AU)</option>
-                <option value="+65">+65 (SG)</option>
-                <option value="+1">+1 (CA)</option>
-                <option value="+49">+49 (DE)</option>
-              </select>
-              <input type="tel" id="f-whatsapp" name="whatsapp" required placeholder="Phone / WhatsApp" style="flex:1;" />
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="f-instagram">Instagram / Social Profile URL <span class="req">*</span></label>
-            <input type="text" id="f-instagram" name="instagram" required placeholder="https://instagram.com/yourhandle or @handle" />
-          </div>
-        </div>
-
-        <!-- Field 5 & 6: Profession & Selling -->
-        <div class="field-grid-2">
-          <div class="form-field">
-            <label for="f-profession">Business / Profession <span class="req">*</span></label>
-            <select id="f-profession" name="profession" required>
-              <option value="" disabled selected>Select your profession...</option>
-              <option value="Coach">Coach (Leadership, Business, Life, Career)</option>
-              <option value="Consultant">Consultant (Finance, Strategy, B2B)</option>
-              <option value="Astrologer / Spiritual Expert">Astrologer / Spiritual Expert / Occult</option>
-              <option value="Personal Brand / SME">Personal Brand / Subject-Matter Expert</option>
-              <option value="Other">Other Expert-Led Business</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="f-selling">What do you currently sell? <span class="req">*</span></label>
-            <input type="text" id="f-selling" name="selling" required placeholder="e.g. 1:1 Executive Coaching, Consultation Readings" />
-          </div>
-        </div>
-
-        <!-- Field 7 & 10: Revenue Range & Monthly Marketing Budget (Optional) -->
-        <div class="field-grid-2">
-          <div class="form-field">
-            <label for="f-revenue">Current Monthly Revenue <span class="opt">(Optional)</span></label>
-            <select id="f-revenue" name="revenue">
-              <option value="" selected>Select revenue range (optional)...</option>
-              <option value="Pre-revenue / Getting started">Pre-revenue / Getting started</option>
-              <option value="Under ₹1,00,000 / month">Under ₹1,00,000 / month</option>
-              <option value="₹1,00,000 – ₹3,00,000 / month">₹1,00,000 – ₹3,00,000 / month</option>
-              <option value="₹3,00,000 – ₹10,00,000 / month">₹3,00,000 – ₹10,00,000 / month</option>
-              <option value="₹10,00,000+ / month">₹10,00,000+ / month</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="f-budget">Approximate Monthly Marketing Budget <span class="opt">(Optional)</span></label>
-            <select id="f-budget" name="budget">
-              <option value="" selected>Select budget range (optional)...</option>
-              <option value="Under ₹25,000">Under ₹25,000</option>
-              <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
-              <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
-              <option value="₹1,00,000+">₹1,00,000+</option>
-              <option value="Flexible / Depends on ROI">Flexible / Depends on ROI</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Field 8: Biggest Social Media Challenge -->
+        <!-- Field 1: Name -->
         <div class="form-field">
-          <label for="f-challenge">What is your biggest social media challenge? <span class="req">*</span></label>
-          <input type="text" id="f-challenge" name="challenge" required placeholder="e.g. Inconsistent posting, views but no qualified enquiries, lack of time" />
+          <label for="f-name">Name <span class="req">*</span></label>
+          <input type="text" id="f-name" name="name" required placeholder="Your full name" autocomplete="name" />
         </div>
 
-        <!-- Field 9: Desired Business Outcome -->
+        <!-- Field 2: Phone Number -->
         <div class="form-field">
-          <label for="f-goal">What do you want social media to help you achieve? <span class="req">*</span></label>
-          <input type="text" id="f-goal" name="goal" required placeholder="e.g. Build authority, attract high-ticket clients, consistent inbound inquiries" />
+          <label for="f-whatsapp">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="f-whatsapp" name="whatsapp" required placeholder="e.g. 9876543210" autocomplete="tel" />
+        </div>
+
+        <!-- Field 3: Instagram Username -->
+        <div class="form-field">
+          <label for="f-instagram">Instagram Username <span class="req">*</span></label>
+          <input type="text" id="f-instagram" name="instagram" required placeholder="@yourhandle" />
+        </div>
+
+        <!-- Field 4: Niche -->
+        <div class="form-field">
+          <label for="f-niche">Niche <span class="req">*</span></label>
+          <input type="text" id="f-niche" name="niche" required placeholder="e.g. Business Coaching, Astrology, Finance Consulting" />
+        </div>
+
+        <!-- Field 5: Goal (dropdown) -->
+        <div class="form-field">
+          <label for="f-goal">Goal <span class="req">*</span></label>
+          <select id="f-goal" name="goal" required>
+            <option value="" disabled selected>Select your primary goal...</option>
+            <option value="Followers">Followers</option>
+            <option value="Consultancies">Consultancies</option>
+            <option value="Organic Presence">Organic Presence</option>
+            <option value="Growing Business with Followers">Growing business with the help of followers</option>
+          </select>
         </div>
 
         <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:0.75rem">APPLY FOR A STRATEGY CALL</button>
         <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);text-align:center">
-          We respect your privacy. Information provided is used solely to evaluate your profile before the strategy call.
+          We respect your privacy. Your information is used solely to discuss the strategy call.
         </p>
       </form>
     </div>
@@ -1445,11 +1488,15 @@
 
 <script src="site.js" defer></script>
 <script>
-/* IG growth graph — ponytail: canvas-free SVG path approach; ceiling = no zoom/resize recompute */
+/* Performance dashboard: counter + graph — ponytail: IntersectionObserver once, no deps */
 (function(){
-  var pts = [72,65,60,52,42,30,18,8]; // y values (lower = higher on chart), 8 data points
-  var W = 300, H = 80, n = pts.length;
-  var xs = pts.map(function(_,i){ return i * W/(n-1); });
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── graph data: y values in viewBox(300,72), lower = higher on chart ── */
+  var W=300, H=72;
+  var pts = [68, 60, 52, 40, 28, 14, 6]; // 7 pts, left→right growth
+  var xs  = pts.map(function(_,i){ return Math.round(i * W/(pts.length-1)); });
 
   function cubicPath(xs, ys) {
     var d = 'M '+xs[0]+' '+ys[0];
@@ -1460,45 +1507,79 @@
     return d;
   }
 
-  function draw(ys) {
-    var line = document.getElementById('ig-growth-line');
-    var area = document.getElementById('ig-growth-area');
-    var dot  = document.getElementById('ig-graph-dot');
+  function drawGraph() {
+    var line = document.getElementById('pg-growth-line');
+    var area = document.getElementById('pg-growth-area');
+    var dot  = document.getElementById('pg-graph-dot');
     if (!line) return;
-    var p = cubicPath(xs, ys);
+    var p = cubicPath(xs, pts);
     line.setAttribute('d', p);
-    area.setAttribute('d', p + ' L '+xs[n-1]+' '+H+' L '+xs[0]+' '+H+' Z');
-    dot.setAttribute('cx', xs[n-1]);
-    dot.setAttribute('cy', ys[n-1]);
-    // animate: stroke-dasharray trick
-    var len = line.getTotalLength ? line.getTotalLength() : 400;
-    line.style.strokeDasharray = len;
+    area.setAttribute('d', p+' L '+xs[pts.length-1]+' '+H+' L '+xs[0]+' '+H+' Z');
+    dot.setAttribute('cx', xs[pts.length-1]);
+    dot.setAttribute('cy', pts[pts.length-1]);
+    if (reduced) {
+      area.style.opacity = 1; dot.style.opacity = 1; return;
+    }
+    var len = line.getTotalLength ? line.getTotalLength() : 380;
+    line.style.strokeDasharray  = len;
     line.style.strokeDashoffset = len;
-    area.style.opacity = 0;
-    dot.style.opacity = 0;
-    // trigger reflow then animate
+    area.style.opacity = 0; dot.style.opacity = 0;
     requestAnimationFrame(function(){
       requestAnimationFrame(function(){
-        line.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)';
+        line.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.4,0,0.2,1)';
         line.style.strokeDashoffset = 0;
-        area.style.transition = 'opacity 1s ease 0.6s';
+        area.style.transition = 'opacity 1s ease 0.5s';
         area.style.opacity = 1;
-        dot.style.transition = 'opacity 0.3s ease 1.3s';
+        dot.style.transition = 'opacity 0.3s ease 1.4s';
         dot.style.opacity = 1;
       });
     });
   }
 
-  // jitter the points slightly each loop so it feels live
-  function jitter(base) {
-    return base.map(function(y,i){
-      if (i===0 || i===base.length-1) return y; // keep anchors
-      return Math.max(5, Math.min(H-5, y + (Math.random()-0.5)*6));
-    });
+  /* ── animated number counter ── */
+  function animateCounter(el, target, finalText, duration) {
+    if (reduced) { el.textContent = finalText; return; }
+    var start = performance.now();
+    function tick(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(target * ease);
+      if (p >= 1) {
+        el.textContent = finalText; // exact final value
+      } else {
+        /* intermediate display: K suffix for thousands */
+        el.textContent = val >= 1000
+          ? Math.round(val/1000) + 'K'
+          : val.toString();
+      }
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
-  draw(pts);
-  setInterval(function(){ draw(jitter(pts)); }, 4000);
+  /* ── trigger everything once when perf-section enters viewport ── */
+  var triggered = false;
+  var section = document.getElementById('perf-section');
+  if (!section) return;
+
+  function trigger() {
+    if (triggered) return;
+    triggered = true;
+    drawGraph();
+    var viewsEl     = document.getElementById('perf-views');
+    var followersEl = document.getElementById('perf-followers');
+    if (viewsEl)     animateCounter(viewsEl,     500000, '500K+', 1800);
+    if (followersEl) animateCounter(followersEl, 100000, '100K+', 1600);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting) { trigger(); io.disconnect(); }
+    }, { threshold: 0.15 });
+    io.observe(section);
+  } else {
+    trigger(); // fallback for old browsers
+  }
 })();
 </script>
 

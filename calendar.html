@@ -3,10 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Ads Lancer — Book Your Social Media Strategy Call</title>
-    <meta name="description" content="Choose a time for a 30-45 minute Social Media Strategy Call to review your positioning and content system." />
+    <title>The Ads Lancer — Apply for a Strategy Call</title>
+    <meta name="description" content="Apply for a 30-45 minute Social Media Strategy Call. Tell us about your brand and we'll review your positioning and content system." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="site.css" />
+    <style>
+      /* ── Inline form styles (mirrors index.html modal form) ── */
+      .apply-form-wrap {
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+      .form-card {
+        background: var(--bg-2, #ffffff);
+        border: 1px solid var(--line-strong, #e2e8f0);
+        border-radius: 20px;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        margin-top: var(--space-4, 2rem);
+      }
+      .success-box {
+        text-align: center;
+        padding: 3rem 1rem;
+        display: none;
+      }
+      .success-icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1.25rem;
+        border-radius: 999px;
+        background: rgba(5, 150, 105, 0.1);
+        color: var(--good, #059669);
+        display: grid;
+        place-items: center;
+      }
+    </style>
   </head>
   <body>
 
@@ -29,38 +58,143 @@
 
 <main style="padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
   <section class="container">
-    <div class="reveal is-visible" style="max-width: 44rem; margin: 0 auto; text-align: center;">
-      <span class="pill tone-accent"><span class="dot"><i></i><i></i></span> Strategy Call Booking</span>
-      <h1 style="margin-top: 1.5rem; font-size: var(--fs-h2);">Let’s map out your<br><span class="gradient-text">Social Media Growth Engine.</span></h1>
-      
-      <p class="lead" style="margin: 1.5rem auto 0; color: var(--text);">
-        Choose a time for a 30-45 minute Strategy Session. We will review your current personal brand positioning, analyze content gaps, and blueprint an authority-building system tailored to your expertise.
-      </p>
+    <div class="apply-form-wrap">
 
-      <!-- Before the call checklist card -->
-      <div class="card card-pad" style="margin-top: var(--space-4); text-align: left; background: var(--bg-2); border-color: var(--line-strong);">
-        <h3 style="font-size: 1.15rem; color: var(--ink);">Before the call</h3>
-        <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--text); line-height: 1.62;">
-          Please have your social links handy: Instagram profile, primary offers, target audience description, and any past content performance data if available.
+      <div class="reveal is-visible" style="text-align: center; max-width: 38rem; margin: 0 auto;">
+        <span class="pill tone-accent"><span class="dot"><i></i><i></i></span> Strategy Call Application</span>
+        <h1 style="margin-top: 1.5rem; font-size: var(--fs-h2);">Apply for a<br><span class="gradient-text">Strategy Call.</span></h1>
+        <p class="lead" style="margin: 1.25rem auto 0; color: var(--text);">
+          Tell us about your brand so we can review your current presence and discuss the right approach for your social media growth.
         </p>
       </div>
 
-      <!-- Mock Calendar Widget Placeholder -->
-      <div class="card card-pad" style="margin-top: var(--space-4); min-height: 24rem; display: flex; flex-direction: column; align-items: center; justify-content: center; border-style: dashed; border-color: var(--accent);">
-        <div style="text-align: center; max-width: 24rem;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <h3 style="font-size: 1.25rem;">Select Your Preferred Time</h3>
-          <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--muted);">
-            Lock in a 1-on-1 strategy session directly on our calendar.
-          </p>
-          <div style="margin-top: 1.5rem;">
-            <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-accent btn-lg" style="display: inline-flex; justify-content: center; align-items: center;">
-              OPEN CALENDAR SCHEDULER
-            </a>
-          </div>
-        </div>
+      <!-- Before-call checklist -->
+      <div class="card card-pad reveal" style="margin-top: var(--space-4); text-align: left; background: var(--bg-2); border-color: var(--line-strong);">
+        <h3 style="font-size: 1.1rem; color: var(--ink);">Before you apply</h3>
+        <p style="margin-top: 0.5rem; font-size: var(--fs-sm); color: var(--text); line-height: 1.62;">
+          Please have your social links handy: Instagram profile, primary offers, target audience description, and any past content performance data if available. This helps us review your brand meaningfully before the call.
+        </p>
       </div>
-    </div>
+
+      <!-- Application Form Card -->
+      <div class="form-card reveal" id="form-area">
+
+        <!-- Form itself -->
+        <form id="application-form" autocomplete="on" novalidate>
+
+          <!-- Field 1 & 2: Name & Email -->
+          <div class="field-grid-2">
+            <div class="form-field">
+              <label for="f-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" required placeholder="e.g. Vikramaditya Verma" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="f-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" required placeholder="you@brand.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <!-- Field 3 & 4: WhatsApp & Social Profile -->
+          <div class="field-grid-2">
+            <div class="form-field">
+              <label for="f-whatsapp">Phone / WhatsApp <span class="req">*</span></label>
+              <div class="tel-row">
+                <select class="tel-code" name="country_code" aria-label="Country Code">
+                  <option value="+91" selected>+91 (IN)</option>
+                  <option value="+1">+1 (US)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+971">+971 (AE)</option>
+                  <option value="+61">+61 (AU)</option>
+                  <option value="+65">+65 (SG)</option>
+                  <option value="+1">+1 (CA)</option>
+                  <option value="+49">+49 (DE)</option>
+                </select>
+                <input type="tel" id="f-whatsapp" name="whatsapp" required placeholder="Phone / WhatsApp" style="flex:1;" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="f-instagram">Instagram / Social Profile URL <span class="req">*</span></label>
+              <input type="text" id="f-instagram" name="instagram" required placeholder="https://instagram.com/yourhandle or @handle" />
+            </div>
+          </div>
+
+          <!-- Field 5 & 6: Profession & Selling -->
+          <div class="field-grid-2">
+            <div class="form-field">
+              <label for="f-profession">Business / Profession <span class="req">*</span></label>
+              <select id="f-profession" name="profession" required>
+                <option value="" disabled selected>Select your profession...</option>
+                <option value="Coach">Coach (Leadership, Business, Life, Career)</option>
+                <option value="Consultant">Consultant (Finance, Strategy, B2B)</option>
+                <option value="Astrologer / Spiritual Expert">Astrologer / Spiritual Expert / Occult</option>
+                <option value="Personal Brand / SME">Personal Brand / Subject-Matter Expert</option>
+                <option value="Other">Other Expert-Led Business</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="f-selling">What do you currently sell? <span class="req">*</span></label>
+              <input type="text" id="f-selling" name="selling" required placeholder="e.g. 1:1 Executive Coaching, Consultation Readings" />
+            </div>
+          </div>
+
+          <!-- Field 7 & 10: Revenue Range & Monthly Marketing Budget (Optional) -->
+          <div class="field-grid-2">
+            <div class="form-field">
+              <label for="f-revenue">Current Monthly Revenue <span class="opt">(Optional)</span></label>
+              <select id="f-revenue" name="revenue">
+                <option value="" selected>Select revenue range (optional)...</option>
+                <option value="Pre-revenue / Getting started">Pre-revenue / Getting started</option>
+                <option value="Under ₹1,00,000 / month">Under ₹1,00,000 / month</option>
+                <option value="₹1,00,000 – ₹3,00,000 / month">₹1,00,000 – ₹3,00,000 / month</option>
+                <option value="₹3,00,000 – ₹10,00,000 / month">₹3,00,000 – ₹10,00,000 / month</option>
+                <option value="₹10,00,000+ / month">₹10,00,000+ / month</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="f-budget">Approximate Monthly Marketing Budget <span class="opt">(Optional)</span></label>
+              <select id="f-budget" name="budget">
+                <option value="" selected>Select budget range (optional)...</option>
+                <option value="Under ₹25,000">Under ₹25,000</option>
+                <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+                <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                <option value="₹1,00,000+">₹1,00,000+</option>
+                <option value="Flexible / Depends on ROI">Flexible / Depends on ROI</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 8: Biggest Social Media Challenge -->
+          <div class="form-field">
+            <label for="f-challenge">What is your biggest social media challenge? <span class="req">*</span></label>
+            <input type="text" id="f-challenge" name="challenge" required placeholder="e.g. Inconsistent posting, views but no qualified enquiries, lack of time" />
+          </div>
+
+          <!-- Field 9: Desired Business Outcome -->
+          <div class="form-field">
+            <label for="f-goal">What do you want social media to help you achieve? <span class="req">*</span></label>
+            <input type="text" id="f-goal" name="goal" required placeholder="e.g. Build authority, attract high-ticket clients, consistent inbound inquiries" />
+          </div>
+
+          <button type="submit" id="cal-submit-btn" class="btn btn-accent btn-lg" style="width:100%;margin-top:0.75rem">APPLY FOR A STRATEGY CALL</button>
+          <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--muted);text-align:center">
+            We respect your privacy. Information provided is used solely to evaluate your profile before the strategy call.
+          </p>
+        </form>
+
+        <!-- Success state -->
+        <div class="success-box" id="cal-success">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="font-size:1.4rem;color:var(--ink)">Application Received</h3>
+          <p style="margin:0.85rem auto 0;font-size:0.98rem;line-height:1.6;color:var(--text);max-width:26rem">
+            Thanks — your application has been received. We'll review your brand and contact you regarding the strategy call.
+          </p>
+          <a href="index.html" class="btn btn-ghost btn-md" style="margin-top:1.5rem;display:inline-flex">Back to Home</a>
+        </div>
+
+      </div><!-- /form-card -->
+    </div><!-- /apply-form-wrap -->
   </section>
 </main>
 
@@ -70,6 +204,87 @@
     <p>© 2026 The Ads Lancer. Performance Marketing &amp; Personal Brand Growth.</p>
   </div>
 </footer>
+
+<script src="site.js" defer></script>
+<script>
+/* ── calendar.html: inline form submission (same Google Sheets webhook as index.html) ── */
+(function () {
+  'use strict';
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyE7kPHDTgvXQLxcPKYp5fFzES9j8ku0T9lWd53Gf-ihYz2G4GBrWdcG5xPwaTsMSsppw/exec';
+  var SECRET    = 'tal-2026-krsna110';
+
+  /* UTM retrieval from sessionStorage (populated by site.js) */
+  function getUtm(key) {
+    try { return sessionStorage.getItem('tal_' + key) || ''; } catch (e) { return ''; }
+  }
+
+  var form      = document.getElementById('application-form');
+  var submitBtn = document.getElementById('cal-submit-btn');
+  var successEl = document.getElementById('cal-success');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* Basic HTML5 validation */
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting application\u2026';
+
+    var countryCode = form.elements['country_code'] ? form.elements['country_code'].value : '+91';
+    var rawPhone    = form.elements['whatsapp']      ? form.elements['whatsapp'].value.trim() : '';
+
+    var payload = {
+      secret:       SECRET,
+      name:         form.elements['name']       ? form.elements['name'].value.trim()       : '',
+      email:        form.elements['email']      ? form.elements['email'].value.trim()      : '',
+      whatsapp:     countryCode + ' ' + rawPhone,
+      instagram:    form.elements['instagram']  ? form.elements['instagram'].value.trim()  : '',
+      profession:   form.elements['profession'] ? form.elements['profession'].value        : '',
+      selling:      form.elements['selling']    ? form.elements['selling'].value.trim()    : '',
+      revenue:      form.elements['revenue']    ? form.elements['revenue'].value           : '',
+      challenge:    form.elements['challenge']  ? form.elements['challenge'].value.trim()  : '',
+      goal:         form.elements['goal']       ? form.elements['goal'].value.trim()       : '',
+      budget:       form.elements['budget']     ? form.elements['budget'].value            : '',
+      utm_source:   getUtm('utm_source'),
+      utm_medium:   getUtm('utm_medium'),
+      utm_campaign: getUtm('utm_campaign'),
+      utm_term:     getUtm('utm_term'),
+      utm_content:  getUtm('utm_content'),
+      source:       'The Ads Lancer SMM Landing Page - calendar.html',
+      submittedAt:  new Date().toISOString()
+    };
+
+    var showSuccess = function () {
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'APPLY FOR A STRATEGY CALL';
+      form.style.display      = 'none';
+      successEl.style.display = 'block';
+    };
+
+    /* Optimistic 2.2 s timeout fallback — same pattern as index.html */
+    var didRespond = false;
+    var timeoutId  = setTimeout(function () {
+      if (!didRespond) { didRespond = true; showSuccess(); }
+    }, 2200);
+
+    fetch(SHEET_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body:    JSON.stringify(payload)
+    })
+      .then(function ()  { if (!didRespond) { didRespond = true; clearTimeout(timeoutId); showSuccess(); } })
+      .catch(function () { if (!didRespond) { didRespond = true; clearTimeout(timeoutId); showSuccess(); } });
+  });
+})();
+</script>
 
   </body>
 </html>

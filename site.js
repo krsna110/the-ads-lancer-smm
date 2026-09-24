@@ -293,30 +293,21 @@
           submitBtn.textContent = 'Submitting application...';
         }
 
-        var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyE7kPHDTgvXQLxcPKYp5fFzES9j8ku0T9lWd53Gf-ihYz2G4GBrWdcG5xPwaTsMSsppw/exec';
+        var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwYIAfo5b_oKtelXR9pwKrOiJSbw7uib6RT-oFf6a1WayxmuV_EtkkAAkMA6XESLRQo/exec';
         var SECRET    = 'tal-2026-krsna110';
-
-        var countryCode = (form.elements['country_code'] ? form.elements['country_code'].value : '+91');
-        var rawPhone = (form.elements['whatsapp'] ? form.elements['whatsapp'].value.trim() : '');
-        var fullPhone = countryCode + ' ' + rawPhone;
 
         var payload = {
           secret:       SECRET,
-          name:         form.elements['name'] ? form.elements['name'].value.trim() : '',
-          email:        form.elements['email'] ? form.elements['email'].value.trim() : '',
-          whatsapp:     fullPhone,
-          instagram:    form.elements['instagram'] ? form.elements['instagram'].value.trim() : '',
-          profession:   form.elements['profession'] ? form.elements['profession'].value : '',
-          selling:      form.elements['selling'] ? form.elements['selling'].value.trim() : '',
-          revenue:      form.elements['revenue'] ? form.elements['revenue'].value : '',
-          challenge:    form.elements['challenge'] ? form.elements['challenge'].value.trim() : '',
-          goal:         form.elements['goal'] ? form.elements['goal'].value.trim() : '',
-          budget:       form.elements['budget'] ? form.elements['budget'].value : '',
-          utm_source:   capturedUtms.utm_source || '',
-          utm_medium:   capturedUtms.utm_medium || '',
-          utm_campaign: capturedUtms.utm_campaign || '',
-          utm_term:     capturedUtms.utm_term || '',
-          utm_content:  capturedUtms.utm_content || '',
+          name:         form.elements['name']      ? form.elements['name'].value.trim()      : '',
+          phone:        form.elements['whatsapp']  ? form.elements['whatsapp'].value.trim()  : '',
+          instagram:    form.elements['instagram']  ? form.elements['instagram'].value.trim()  : '',
+          niche:        form.elements['niche']      ? form.elements['niche'].value.trim()      : '',
+          goal:         form.elements['goal']       ? form.elements['goal'].value              : '',
+          utm_source:   capturedUtms.utm_source    || '',
+          utm_medium:   capturedUtms.utm_medium    || '',
+          utm_campaign: capturedUtms.utm_campaign  || '',
+          utm_term:     capturedUtms.utm_term      || '',
+          utm_content:  capturedUtms.utm_content   || '',
           source:       'The Ads Lancer SMM Landing Page',
           submittedAt:  new Date().toISOString()
         };
@@ -333,8 +324,8 @@
           }
           trackEvent('form_submit', {
             form_name: 'strategy_call_application',
-            profession: payload.profession,
-            budget: payload.budget
+            goal: payload.goal,
+            niche: payload.niche
           });
         };
 
